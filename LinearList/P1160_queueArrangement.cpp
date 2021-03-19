@@ -6,7 +6,7 @@
 #define fp(i, l, r) for(register int i=(l); i<=(r); i++) 
 #define fd(i, l, r) for(register int i=(l); i>=(r); i--)
 typedef long long ll;
-
+//------------------------------结构体构造双向链表，优化AC__开始---------------------------------------
 using namespace std;
 const int maxn = 1e5+5;
 struct li {
@@ -58,6 +58,7 @@ int main(void) {
     _getch();
     return 0;
 }
+//------------------------------结构体构造双向链表，优化AC__结束---------------------------------------
 
 // -----------------------------使用stl中list，未优化TLE__开始-------------------------------------
 // const int maxn = 1e5+5;
