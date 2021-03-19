@@ -29,6 +29,7 @@
         "xmemory": "cpp",
         "queue": "cpp",
         "vector": "cpp",
+        "list": "cpp",
         "cstdio": "cpp",
         "algorithm": "cpp"
     }, // 格式化时调整include的顺序（按字母排序）
