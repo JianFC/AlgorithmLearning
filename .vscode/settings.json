@@ -31,6 +31,9 @@
         "vector": "cpp",
         "list": "cpp",
         "cstdio": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp",
+        "xiosbase": "cpp"
     }, // 格式化时调整include的顺序（按字母排序）
 }
