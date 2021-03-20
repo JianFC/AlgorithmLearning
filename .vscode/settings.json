@@ -38,6 +38,7 @@
         "algorithm": "cpp",
         "tuple": "cpp",
         "utility": "cpp",
-        "xiosbase": "cpp"
+        "xiosbase": "cpp",
+        "ostream": "cpp"
     }, // 格式化时调整include的顺序（按字母排序）
 }
