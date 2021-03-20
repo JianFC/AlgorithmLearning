@@ -9,6 +9,10 @@
     // "editor.fontFamily": "Source Code Pro Medium, 'Courier New', monospace",
     // "editor.fontSize": 13.5,
 
+    //关闭VScode自带git，使用传统git命令行进行GitHub同步
+    "git.enabled": false,
+    "git.autofetch": false,
+
     "code-runner.runInTerminal": true, // 设置成false会在“输出”中输出，无法输入
     "code-runner.executorMap": {
         "c": "gcc '$fileName' -o '$fileNameWithoutExt.exe' -Wall -O2 -m64 -lm -static-libgcc -fexec-charset=GBK -D__USE_MINGW_ANSI_STDIO && &'./$fileNameWithoutExt.exe'",
@@ -29,7 +33,11 @@
         "xmemory": "cpp",
         "queue": "cpp",
         "vector": "cpp",
+        "list": "cpp",
         "cstdio": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp",
+        "xiosbase": "cpp"
     }, // 格式化时调整include的顺序（按字母排序）
 }
