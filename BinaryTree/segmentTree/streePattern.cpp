@@ -62,6 +62,7 @@ int intervalQuery(int L, int R, int l, int r, int loc) { //[l, r]为待分割区
     if (R >= mid+1) ans += intervalQuery(L, R, mid+1, r, rightchild);   //如果[L,R]与[l,r]分割后的右区间有重叠，则继续搜索右子树
     return ans; //递归返回结果
 }
+//------------------------线段树基本模板：建树，点修改，区间查询__结束----------------------------
 
 int main(void){
     cin >> n;
@@ -76,4 +77,4 @@ int main(void){
     return 0;
 }
 
-//------------------------线段树基本模板：建树，点修改，区间查询__结束----------------------------
+
