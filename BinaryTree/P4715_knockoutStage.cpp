@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <cstdio>
-#include <stack>
+#include <queue>
 #include <cstring>
 #include <conio.h>
 #define fp(i, l, r) for(register int i=(l); i<=(r); i++)
@@ -9,6 +9,33 @@
 typedef long long ll;
 
 using namespace std;
+queue<pair<int, int> > que;  //pair中first代表国家能力，second代表国家序号
+int n, power;
+pair<int, int> a, b;    //a，b分别代表每次从que中取出的两个国家
+
+int main(void) {
+    cin >> n;
+    fp(i, 1, 1<<n) {
+        cin >> power;
+        que.push(make_pair(power, i));  //将(power, id)对插入队尾
+    } 
+    while(que.size()>2) {   //当que.size()==2时，队列中只剩下冠亚军，此时需要单独判断
+        a = que.front(); que.pop(); //取出队首元素
+        b = que.front(); que.pop(); //继续取出队首元素
+        //将赢的国家继续放入队列中
+        if (a.first > b.first) que.push(a);
+        else que.push(b);   
+    }
+    a = que.front(); que.pop();
+    b = que.front(); que.pop();
+    if (a.first > b.first) cout << b.second;
+    else cout << a.second;
+
+    _getch();
+    return 0;
+}
+
+
 //-----------------------------------------线段树__开始--------------------------------
 // const int maxn = 300;
 // const int max4n = 1200; //线段树数组大小开二叉树结点数量的四倍

@@ -27,7 +27,7 @@ void build(int l, int r, int loc) { //[l, r]为待分割区间，loc为当前位
         stree[loc] = seq[l];
         return;
     }
-    int mid = (l+r)>>1; //将区间[l,r]对半分，实际上[l,mid].size>[mid+1,r].size
+    int mid = (l+r)>>1; //将区间[l,r]对半分，实际上[l,mid].size>=[mid+1,r].size
     int leftchild = loc<<1;
     int rightchild = loc<<1|1;
     build(l, mid, leftchild);   //构建左子树
