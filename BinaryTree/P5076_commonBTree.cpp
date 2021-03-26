@@ -1,4 +1,11 @@
 //Reference：https://www.luogu.com.cn/problem/solution/P5076
+
+// 二叉搜索树(BST)性质：
+//      1. 若左子树不空，则左子树上所有结点的值均小于它的根结点的值
+//      2. 若右子树不空，则右子树上所有结点的值均大于它的根结点的值
+//      3. 左、右子树也分别为二叉排序树
+//      4. 没有权值相等的结点。
+
 #include <iostream>
 #include <algorithm>
 #include <cstdio>
@@ -104,15 +111,15 @@ int queryBack(int loc, int x, int ans) {
 
 //查询数x的排名（排名定义为比当前数小的数的个数+1。若有多个相同的数，应输出最小的排名）
 int queryRankforVal(int loc, int x) {
-    if (loc == 0) return 0;
+    if (loc == 0) return 0;     //此时到达叶节点，说明没有比x小的数
     else {  //loc!=0
         if (tree[loc].val == x) {
             return tree[tree[loc].ls].siz;
         }
-        else if (tree[loc].val < x) {
+        else if (tree[loc].val < x) {  //右子树寻找
             return queryRankforVal(tree[loc].rs, x)+tree[tree[loc].ls].siz + tree[loc].cnt;
         }
-        else {
+        else {  //tree[loc].val > x 左子树寻找
             return queryRankforVal(tree[loc].ls, x);
         }
     }
@@ -120,15 +127,15 @@ int queryRankforVal(int loc, int x) {
 
 //查询排名为x的数
 int queryValofRank(int loc, int x) {
-    if (loc == 0) return INF;
-    else {
-        if (tree[tree[loc].ls].siz >= x) {
+    if (loc == 0) return INF;   //没有改排名的数
+    else {  //loc!=0,未到达叶节点
+        if (tree[tree[loc].ls].siz >= x) {  //注意是查询tree[loc].ls的siz，当前结点的值的排名大于x，在其左子树中搜索
             return queryValofRank(tree[loc].ls, x);
         }
-        else if (tree[tree[loc].ls].siz + tree[loc].cnt >= x) {
+        else if (tree[tree[loc].ls].siz + tree[loc].cnt >= x) {     //当前结点值的排名等与x，返回值
             return tree[loc].val;
         }
-        else {
+        else {  //当前结点的排名小于x，在其右子树中寻找
             return queryValofRank(tree[loc].rs, x-tree[tree[loc].ls].siz-tree[loc].cnt);
         }
     }
