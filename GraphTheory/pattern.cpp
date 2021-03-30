@@ -12,12 +12,12 @@
 #define fd(i, l, r) for(register int i=(l); i>=(r); i--)
 
 using namespace std;
-const int maxn = 1005;
-const int maxm = 1005;
+const int maxn = 1005;      //图中结点数
+const int maxm = 1e5+5;     //图中边的数目
 
 //一.存图方法
 //------------------------------------邻接矩阵__开始—-------------------------------------------
-int mat[maxn][maxm];    //邻接矩阵
+int mat[maxn][maxn];    //邻接矩阵
 //邻接矩阵，示例：双向有边权图
 inline void add1(int u, int v, int w) {
     mat[u][v] = w;
@@ -47,7 +47,7 @@ inline void add3(int u, int v, int w) {
 
 // 遍历所有结点方法
 inline void traverse(void) {
-    for (int i=0; i<nodes[2].size(); i++) {
+    for (int i=0; i<int(nodes[2].size()); i++) {
         cout << nodes[2][i].to << " ";  //打印2号结点所有的邻接结点
     }
     //range-based for形式
@@ -58,6 +58,31 @@ inline void traverse(void) {
 
 //------------------------------------邻接表__结束--------------------------------------------
 
+//---------------------------链式前向星__开始---------------------------------------------
+struct edge2 {
+    int to, w, next;    //to,w意义参考邻接表实现方法，next存储下一个结点（实际为前向结点）索引位置
+} edges[maxm];
+int head[maxn] = {0};   //head[i]为第i个结点的相邻结点形成的链表的头节点
+int cnt=0;    //edges[maxn]结构体数组计数器
+
+// 更新插入函数
+inline void add4(int from, int to, int w) {
+    edges[++cnt].to = to;
+    edges[cnt].w = w;
+    edges[cnt].next = head[from];   //存储上一次存入的前向结点，结束终点为0
+    head[from] = cnt;   //记录当前邻边和相邻结点在edges[maxm]数组中的位置
+}
+
+// 遍历函数，例子：打印2号结点所有的邻接结点
+inline void traverse2(void) {
+    for (int e=head[2]; e!=0; e=edges[e].next) {
+        cout << edges[e].to << " " << endl;
+    }
+} 
+
+//---------------------------链式前向星__结束---------------------------------------------
+
+//二.最短路径算法
 
 
 
