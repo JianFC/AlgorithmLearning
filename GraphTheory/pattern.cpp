@@ -61,6 +61,7 @@ inline void traverse(void) {
 //---------------------------链式前向星__开始---------------------------------------------
 struct edge2 {
     int to, w, next;    //to,w意义参考邻接表实现方法，next存储下一个结点（实际为前向结点）索引位置
+    int from;   //新增from成员，便于后面使用bellman-ford算法求最短路径
 } edges[maxm];
 int head[maxn] = {0};   //head[i]为第i个结点的相邻结点形成的链表的头节点
 int cnt=0;    //edges[maxn]结构体数组计数器
@@ -78,12 +79,56 @@ inline void traverse2(void) {
     for (int e=head[2]; e!=0; e=edges[e].next) {
         cout << edges[e].to << " " << endl;
     }
-} 
+}
 
 //---------------------------链式前向星__结束---------------------------------------------
 
 //二.最短路径算法
+//(1)多源最短路问题
+//  1)--------------------------Floyd算法__开始-------------------------------------------
+int dist[maxn][maxn];   //邻接矩阵
+void init(void) {
+    memset(dist, 63, sizeof(dist));     //邻接矩阵初始化，63=0x3f,即将dist[maxn][maxn]中每个元素初始化为0x3f3f3f3f，
+                                        //这个数的两倍小于32位和64位机器上的INT_MAX
+    for (int i=1; i<=maxn; i++) {
+        dist[i][i]=0;   //将所有点到自己的距离初始化为0
+    }
+}
+inline void add_floyd(int u, int v, int w) {
+    dist[u][v] = w;
+}
 
+inline void floyd(void) {
+    //算法思想
+    //Floyd本质上是一个动态规划的思想，每一次循环更新经过前k个节点，i到j的最短路径。
+    //渐进时间复杂度O(n^3),空间复杂度O(n^2) 
+    for (int k=1; k<=maxn; k++) {
+        for (int i=1; i<=maxn; i++) {
+            for (int j=1; j<=maxn; j++) {
+                dist[i][j] = min(dist[i][j], dist[i][k]+dist[k][j]);    
+            }
+        }
+    }
+}
+
+//  1)--------------------------Floyd算法__结束-------------------------------------------
+
+//(2)单源最短路问题
+//  1)---------------------------Bellman-Ford算法__开始------------------------------------
+int dist_BF[maxn];  //
+inline void Bellman_Ford(int n, int m, int start) {
+    memset(dist_BF, 63, sizeof(dist_BF));
+    dist_BF[start] = 0;
+    //最短路上的点的总个数一定不大于n，尽管一般而言最短路上的顶点数比n少得多，但反正多余的松弛操作不会影响结果，我们索性：
+    //把所有边松弛n-1遍！但其实Bellman-Ford算法是可以很简单地处理负权环的，只需要再多对每条边松弛一遍，如果这次还有点被更新，就说明存在负权环。
+    //因为没有负权环时，最短路上的顶点数一定小于n，而存在负权环时，可以无数次地环绕这个环，最短路上的顶点数是无限的。
+    for (int i=1; i<=n-1; i++) {
+        for (int j=1; j<=m; j++) {
+            dist_BF[edges[j].to] = min(dist_BF[edges[j].to], dist_BF[edges[j].from]+edges[j].w);
+        }
+    }
+}
+//  1)---------------------------Bellman-Ford算法__结束------------------------------------
 
 
 
