@@ -75,6 +75,7 @@
         "xstddef": "cpp",
         "xstring": "cpp",
         "xtr1common": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "PARSE.C": "cpp"
     }, // 格式化时调整include的顺序（按字母排序）
 }

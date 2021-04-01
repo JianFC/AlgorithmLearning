@@ -7,6 +7,7 @@
 #include <cstdio>
 #include <cstring>
 #include <vector>
+#include <queue>
 #include <conio.h>
 #define fp(i, l, r) for(register int i=(l); i<=(r); i++)
 #define fd(i, l, r) for(register int i=(l); i>=(r); i--)
@@ -130,8 +131,92 @@ inline void Bellman_Ford(int n, int m, int start) {
 }
 //  1)---------------------------Bellman-Ford算法__结束------------------------------------
 
+//  2)--------------------------------SPFA_开始-------------------------------------------
+        //算法思想
+        //  a.只让当前点能到达的点入队
+        //  b.如果一个点已经在队列里，便不重复入队
+        //  c.如果一条边未被更新，那么它的终点不入队
+int dist_spfa[maxn];
+int inqueue[maxn];  //inqueue[i]记录结点是否在队列中
+int pre[maxn];  //存储最短路上到达该结点的前一个父节点。 
 
+inline void SPFA(int start) {   //start为起始节点
+    memset(dist_spfa, 63, sizeof(dist_spfa));
+    dist_spfa[start]=0;
+    //初始化
+    queue<int> Q;
+    Q.push(start);
+    inqueue[start] = 1; //已访问
 
+    while (!Q.empty()) {
+        int p = Q.front();
+        Q.pop();
+        inqueue[p] = 0; //更新记录数组
+        for (int e=head[p]; e!=0; e=edges[e].next) {
+            int to = edges[e].to;
+            if (dist_spfa[to] > dist_spfa[p] + edges[e].w) {
+                pre[to] = p;    //记录其父节点，用于打印路径
+                dist_spfa[to] = dist_spfa[p] + edges[e].w;
+                if (!inqueue[to]) {
+                    Q.push(to); inqueue[to] = 1;
+                }
+            }
+        }
+    }
+
+}
+//  判负环：SPFA也可以判负权环，我们可以用一个数组记录每个顶点进队的次数，
+//  当一个顶点进队超过n次时，就说明存在负权环。（这与Bellman-Ford判负权环的原理类似）
+//  2)--------------------------------SPFA_开始-------------------------------------------
+
+//  3)-------------------------------Dijkstra__开始------------------------------------------
+int dist_dij[maxn];
+struct node {   
+    int dist, id;   //id代表节点编号，dist代表代表到达当前结点的最短距离
+    node(int dist, int id) :  dist(dist), id(id){}  //构造函数
+};
+//仿函数
+struct cmp {
+    bool operator ()(node a, node b) {  //重载()函数，使其成为一个仿函数
+        return a.dist > b.dist;
+    }
+};
+priority_queue<node, vector<node>, cmp> Q;  //构造小顶堆
+int vis[maxn];  //vis[i]记录第i个结点是否被访问，已访问为1，未访问为0
+
+inline void Dijkstra(int start) {
+    //初始化
+    memset(dist_dij, 63, sizeof(dist_dij));
+    dist_dij[start] = 0;
+    Q.push(node(0, start));
+    vis[start] = 1; //已访问
+    while (!Q.empty()) {
+        int p = Q.top().id;
+        Q.pop();
+        if (vis[p]) continue;
+        for (int e=head[p]; e!=0; e=edges[e].next) {
+            int to = edges[e].to;
+            if (dist_dij[to] > dist_dij[p] + edges[e].w) {
+                dist_dij[to] = dist_dij[p] + edges[e].w;
+                pre[to] = p;    //更新父结点
+            }
+            //如果当前结点未被访问过，则加入优先队列中。
+            if (!vis[to]) Q.push(node(dist_dij[to], to));   
+        }
+
+    }
+}
+
+//打印最短路径，例子：打印从结点1-4的最短路径
+inline void print_path(int pos) {
+    pos = 4;
+    while (pos != 1) {
+        cout << pos << "<-";
+        pos = pre[pos]; //找寻其父结点
+    }
+}
+
+//  3)-------------------------------Dijkstra__结束------------------------------------------
 int main(void) {
 
     _getch();
