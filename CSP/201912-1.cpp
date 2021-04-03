@@ -22,7 +22,7 @@ inline bool check7(int num) {
         num = num/10;
         if (remainder == 7) { flag = 0; break;}
     }
-    return flag == 0 ? true : false;    //含有数字7为真，不含数字7为假
+    return (flag == 0 ? true : false);    //含有数字7为真，不含数字7为假
 }
 
 //检查是否含7或者是7的倍数
