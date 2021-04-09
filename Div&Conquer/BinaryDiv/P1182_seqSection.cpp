@@ -16,7 +16,7 @@ int low = 0, high = 0, mid = 0;     //二分法三边界
 int res = 0;
 
 ////模板函数，通过x的取值来判定在右区间搜索（true）还是左区间搜索（false）
-inline bool judge(int x) {
+inline bool judge(int x) { 
     int totm = 0;   //记录能够分段的段数，初始化为0
     int sum = 0;    //记录区间和
     fp(i, 1, n) {
@@ -33,7 +33,6 @@ inline bool judge(int x) {
         //     totm++; //更新已经分段的段数 
         //     sum = arr[i];   //更新区间和为新一段的第一个元素值
         //     if (totm >= m) return true;
-            
         // }
         // else {
         //     sum += arr[i];  //更新区间和
