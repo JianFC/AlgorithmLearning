@@ -15,26 +15,29 @@ using namespace std;
 const int maxn = 1e6+10;
 char arti[maxn];    //保存文章
 char word[15];  //待查找单词
-int pos = 0x7fffffff, num=0;    //pos代表单词出现的位置，num代表出现的次数
+int pos,num=0;    //pos代表单词出现的位置，num代表出现的次数
 
 //大写变小写
-inline char translate(char x) {
-    if (x>'z'|| x<'a') {
-        x = x + 'a'-'A';
-    }
-    return x;
+inline char toLower(char x) {
+    return (x>='A' && x<='Z') ? x+'a'-'A' : x;
 }
 
 int main(void) {
     cin.getline(word, maxn);
     cin.getline(arti, maxn);
+    int len1 = strlen(arti), len2 = strlen(word);
 
-    fp(i, 0, int(strlen(word)-1)) word[i] = translate(word[i]);
+    int j = 0;
+    for (int i=0; i<=len1-len2; i++) {
+        for (j=0; j<len2; j++) {
+            if (toLower(arti[i+j]) != toLower(word[j])) break;    
+            if (i>0 && arti[i-1]!=' ') break;   //退出条件是word是arti中某个单词的子集
+        }
 
-    int len = strlen(arti);
-    char temp[15]; int cntt=0;
-    for (int i=0; i<len; i++) {
-        
+        if (j==len2 && (arti[i+j] == ' ' || (i+j)==len1)) {     //成功匹配
+            num++;  //更新出现次数
+            if (num==1) pos=i;  //更新单词起点位置
+        }
     }
 
     if (num!=0) cout << num << " " << pos;
