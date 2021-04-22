@@ -82,7 +82,32 @@ inline void traverse2(void) {
     }
 }
 
+// 链式前向星+DFS
+inline void dfs(int root) {
+    cout << root << " ";
+    for (int e=head[root]; e; e=edges[e].next) {
+        dfs(edges[e].to);
+    }
+}
+
+// 链式前向星+BFS
+inline void Bfs(void) {
+    queue<int> q;
+    int vis[maxn]= {0}; 
+    q.push(1);
+    while(!q.empty()) {
+        int temp = q.front(); q.pop();
+        vis[temp] = 1;  //置1表示已经访问
+        cout << temp;
+        for (int e=head[temp]; e; e=edges[e].next) {
+            if (!vis[edges[e].to]) q.push(edges[e].to);
+        }
+    }
+}
+
+
 //---------------------------链式前向星__结束---------------------------------------------
+
 
 //二.最短路径算法
 //(1)多源最短路问题
