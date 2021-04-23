@@ -45,7 +45,7 @@ inline void dfs1(int root, int pre, int dep) {
 inline void dfs2(int root, int pre) {
     for (int e = head[root]; e; e = edges[e].next) {
         if (edges[e].to == pre) continue;
-        dp[edges[e].to] = dp[root] + (n-siz[edges[e].to]) - siz[edges[e].to]; //状态转移方程
+        dp[edges[e].to] = dp[root] + (n-siz[edges[e].to]) - siz[edges[e].to]; //状态转移方程，注意状态转移方程的位置！
         dfs2(edges[e].to, root);
     }
 }
