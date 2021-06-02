@@ -26,7 +26,6 @@ void buildNxt() {
         else i++;           //now=0;nxt[i] = now = 0;i++
     }
 }
-//hhh
 //利用next数组进行kmp模式匹配
 void search() {
     unsigned int tar = 0, pos = 0;      //tar表示目标串当前下标位置，pos表示模式串下标位置，注意局部变量的初始化
