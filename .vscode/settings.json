@@ -78,6 +78,7 @@
         "xutility": "cpp",
         "PARSE.C": "cpp",
         "cctype": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "SCAN.C": "cpp"
     }, // 格式化时调整include的顺序（按字母排序）
 }
