@@ -11,7 +11,7 @@ inline ll merge_sort(ll *q, ll l, ll r) {
     
     ll mid = (l+r)>>1;
     ll ans = merge_sort(q, l, mid) + merge_sort(q, mid+1, r);
-
+    
     //归并过程
     int k=1, i = l, j = mid+1;
     while (i<=mid && j<=r) {
