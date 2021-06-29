@@ -12,6 +12,9 @@
     //关闭VScode自带git，使用传统git命令行进行GitHub同步
     "git.enabled": false,
     "git.autofetch": false,
+    //关闭自动格式调整与代码补全。
+    "C_Cpp.clang_format_fallbackStyle": "none",
+    // "C_Cpp.autocomplete": "Disabled",
 
     "code-runner.runInTerminal": true, // 设置成false会在“输出”中输出，无法输入
     "code-runner.executorMap": {
