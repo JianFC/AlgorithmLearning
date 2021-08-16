@@ -1,4 +1,5 @@
 #include <iostream>
+#include <conio.h>
 typedef long long ll;
 
 using namespace std;
@@ -8,7 +9,7 @@ ll q[maxn] = {0};
 inline void quick_sort(ll *q, ll l, ll r) {
     if (l>=r) return;   
 
-    int x = q[l+r>>1], i = l-1, j = r+1;
+    int x = q[(l+r)>>1], i = l-1, j = r+1;
     while(i<j) {
         do i++; while(q[i]<x);
         do j--; while(q[j]>x);
@@ -26,5 +27,6 @@ int main(void) {
 
     printf("%lld", q[k]);
 
+    _getch();
     return 0;
 }
