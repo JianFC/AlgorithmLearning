@@ -16,7 +16,7 @@ void add(int a, int b) {    //AcWing 861. 二分图的最大匹配
 }
 
 bool find(int x) {
-    for (int i=h[x]; i!=-1; i=ne[i]) {
+    for (int i = h[x]; i != -1; i = ne[i]) {
         int j = e[i];
         if (!st[j]) {
             st[j] = true;
@@ -36,14 +36,14 @@ int main(void) {
 
     memset(h, -1, sizeof h);
 
-    for (int i=0; i<m; i++) {
+    for (int i = 0; i < m; i++) {
         int a, b;
         scanf("%d%d", &a, &b);
         add(a, b);  //只需存储从左向右的边
     }
 
     int res = 0;
-    for (int i=1; i<=n1; i++) {
+    for (int i = 1; i <= n1; i++) {
         memset(st, false, sizeof st);
         if (find(i)) res++;
     }

@@ -22,29 +22,29 @@ int find(int x) {       //AcWing 240. 食物链
 int main(void) {
     scanf("%d%d", &n, &m);
 
-    for (int i=1; i<=n; i++) p[i] = i;
+    for (int i = 1; i <= n; i++) p[i] = i;
 
     int res = 0;
     while (m--) {
         int t, x, y;
         scanf("%d%d%d", &t, &x, &y);
 
-        if (x>n || y>n) res++;
+        if (x > n || y > n) res++;
         else {
             if (t == 1) {
                 int px = find(x), py = find(y);
-                if (px==py && (d[x]-d[y])%3) res++;
+                if (px == py && (d[x] - d[y]) % 3) res++;
                 else if (px != py) {
                     p[px] = py;
-                    d[px] = d[y]-d[x];
+                    d[px] = d[y] - d[x];
                 }
             }
             else if  (t == 2) {
                 int px = find(x), py = find(y);
-                if (px==py && (d[x]-d[y]-1)%3) res++;
+                if (px == py && (d[x] - d[y] - 1) % 3) res++;
                 else if (px != py) {
                     p[px] = py;
-                    d[px] = d[y]+1-d[x];
+                    d[px] = d[y] + 1 - d[x];
                 }
             }
         }

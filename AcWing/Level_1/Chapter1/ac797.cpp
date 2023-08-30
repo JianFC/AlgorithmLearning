@@ -25,7 +25,7 @@ int main(void) {
         insert(l, r, c);
     }
 
-    for (int i = 1; i <= n; i++) b[i] += b[i -1], printf("%d ", b[i]); 
+    for (int i = 1; i <= n; i++) b[i] += b[i - 1], printf("%d ", b[i]); 
 
     return 0;
 }

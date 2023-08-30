@@ -9,7 +9,7 @@ int son[N][26], cnt[N], idx;    //cnt[i] i所在集合中结点的个数，只�
 
 void insert(char *str) {    //AcWing 835. Trie字符串统计
     int p = 0;
-    for (int i=0; str[i]; i++) {
+    for (int i = 0; str[i]; i++) {
         int u = str[i] - 'a';
         if (!son[p][u]) son[p][u] = ++idx;
         p = son[p][u];
@@ -20,7 +20,7 @@ void insert(char *str) {    //AcWing 835. Trie字符串统计
 
 int query(char *str) {
     int p = 0;
-    for (int i=0; str[i]; i++) {
+    for (int i = 0; str[i]; i++) {
         int u = str[i] - 'a';
         if (!son[p][u]) return 0;
         p = son[p][u];

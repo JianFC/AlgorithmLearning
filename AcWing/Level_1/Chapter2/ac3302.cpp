@@ -17,10 +17,10 @@ void eval() {       //AcWing 3302. 表达式求值
     char c = op[tt2--];
 
     int x = 0;
-    if (c == '+') x = a+b;
-    else if (c == '-') x = a-b;
-    else if (c == '*') x = a*b;
-    else if (c == '/') x = a/b;
+    if (c == '+') x = a + b;
+    else if (c == '-') x = a - b;
+    else if (c == '*') x = a * b;
+    else if (c == '/') x = a / b;
 
     num[++tt1] = x;
 }
@@ -30,16 +30,16 @@ int main(void) {
 
     unordered_map<char, int> pr{{'+', 1}, {'-', 1}, {'*', 2}, {'/', 2}};
 
-    for (int i=0; str[i]; i++) {
+    for (int i = 0; str[i]; i++) {
         auto c = str[i];
 
         if (isdigit(c)) {
             int x = 0, j = i;
             while (str[j] && isdigit(str[j])) 
-                x = x*10+str[j++]-'0';
+                x = x * 10 + str[j++] - '0';
 
             num[++tt1] = x;
-            i = j-1;
+            i = j - 1;
         }
         else if (c == '(') op[++tt2] = c;
         else if (c == ')') {
@@ -47,7 +47,7 @@ int main(void) {
             tt2--;
         }
         else {
-            while (tt2 && op[tt2]!='(' && pr[op[tt2]]>=pr[c]) eval();
+            while (tt2 && op[tt2]!='(' && pr[op[tt2]] >= pr[c]) eval();
             op[++tt2] = c;
         }
     }

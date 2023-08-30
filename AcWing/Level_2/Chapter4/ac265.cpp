@@ -55,7 +55,7 @@ void insert(int &p, int key) {
 }
 
 int get_prev(int p, int key) {
-    if (!p) return -INF;
+    if (!p) return - INF;
     if (tr[p].key > key) return get_prev(tr[p].l, key);    //注意找<=的最大值，因此条件为>
     return max(tr[p].key, get_prev(tr[p].r, key));
 }
@@ -72,7 +72,7 @@ int main(void) {
     
     scanf("%d", &n);
     LL res = 0;
-    for (int i=0; i<n; i++) {
+    for (int i = 0; i < n; i++) {
         int x;
         scanf("%d", &x);
         

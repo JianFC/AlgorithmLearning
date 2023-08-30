@@ -48,19 +48,19 @@ int main(void) {
         }
         else if (op == "D") {
             scanf("%d", &k);
-            remove(k+1);
+            remove(k + 1);
         }
         else if (op == "IL") {
             scanf("%d%d", &k, &x);
-            add(l[k+1], x);
+            add(l[k + 1], x);
         }
         else {
             scanf("%d%d", &k, &x);
-            add(k+1, x);
+            add(k + 1, x);
         }
     }
 
-    for (int i=r[0]; i!=1; i=r[i]) printf("%d ", e[i]);
+    for (int i = r[0]; i != 1; i = r[i]) printf("%d ", e[i]);
 
     return 0;
 }

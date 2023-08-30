@@ -10,11 +10,11 @@ int a[N], b[N];
 int main(void) {        //AcWing 2816. 判断子序列
     scanf("%d%d", &n, &m);
 
-    for (int i=0; i<n; i++) scanf("%d", &a[i]);
-    for (int j=0; j<m; j++) scanf("%d", &b[j]);
+    for (int i = 0; i < n; i++) scanf("%d", &a[i]);
+    for (int j = 0; j < m; j++) scanf("%d", &b[j]);
 
     int i = 0, j = 0;
-    while (i<n && j<m) {
+    while (i < n && j < m) {
         if (a[i] == b[j]) i++;
         j++;
     }

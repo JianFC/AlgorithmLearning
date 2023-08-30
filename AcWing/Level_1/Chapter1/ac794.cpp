@@ -27,7 +27,6 @@ int main(void) {
     for (int i = a.size() - 1; i >= 0; i--) A.push_back(a[i] - '0');
 
     C = div(A, b, r);
-
     for (int i = C.size() - 1; i >= 0; i--) printf("%d", C[i]);
     cout << endl << r;
 

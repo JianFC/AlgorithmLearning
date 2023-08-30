@@ -16,8 +16,8 @@ void heap_swap(int a, int b) {      //AcWing 839. 模拟堆
 
 void down(int u) {
     int t = u;
-    if (2*u<=cnt && h[2*u]<h[t]) t = 2*u;
-    if (2*u+1<=cnt && h[2*u+1]<h[t]) t = 2*u+1;
+    if (2 * u <= cnt && h[2 * u] < h[t]) t = 2 * u;
+    if (2 * u + 1 <= cnt && h[2 * u + 1] < h[t]) t = 2 * u + 1;
     if (t != u) {
         heap_swap(t, u);
         down(t);
@@ -25,8 +25,8 @@ void down(int u) {
 }
 
 void up(int u) {
-    while (u/2 && h[u/2]>h[u]) {
-        heap_swap(u/2, u);
+    while (u / 2 && h[u / 2] > h[u]) {
+        heap_swap(u / 2, u);
         u >>= 1;
     }
 }

@@ -23,10 +23,10 @@ int bfs() {
     while (hh <= tt) {
         int t = q[hh++];
 
-        for (int i=h[t]; i!=-1; i=ne[i]) {
+        for (int i = h[t]; i != -1; i = ne[i]) {
             int j = e[i];
             if (d[j] == -1) {
-                d[j] = d[t]+1;
+                d[j] = d[t] + 1;
                 q[++tt] = j;
             }
         }
@@ -40,7 +40,7 @@ int main(void) {
 
     memset(h, -1, sizeof h);
 
-    for (int i=0; i<m; i++) {
+    for (int i = 0; i < m; i++) {
         int a, b;
         scanf("%d%d", &a, &b);
         add(a, b);

@@ -9,9 +9,9 @@ LL qmi(int a, int k, int p) {       //AcWing 875. 快速幂
     LL res = 1 % p;
     while (k) {
         //初始时a = a^(2^0) 
-        if (k & 1) res = res*a%p;
+        if (k & 1) res = res * a % p;
         k >>= 1;
-        a = (LL)a*a%p;
+        a = (LL)a * a % p;
     }
 
     return res;

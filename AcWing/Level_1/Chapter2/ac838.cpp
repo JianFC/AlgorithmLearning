@@ -10,8 +10,8 @@ int h[N], cnt;
 
 void down(int u) {      //AcWing 838. 堆排序
     int t = u;
-    if (2*u<=cnt && h[2*u]<h[t]) t = 2*u;
-    if (2*u+1<=cnt && h[2*u+1]<h[t]) t = 2*u+1;
+    if (2 * u <= cnt && h[2 * u] < h[t]) t = 2 * u;
+    if (2 * u + 1 <= cnt && h[2 * u + 1] < h[t]) t = 2 * u + 1;
     if (t != u) {
         swap(h[t], h[u]);
         down(t);
@@ -19,8 +19,8 @@ void down(int u) {      //AcWing 838. 堆排序
 }
 
 void up(int u) {
-    while (u/2 && h[u/2]>h[u]) {
-        swap(h[u/2], h[u]);
+    while (u / 2 && h[u / 2] > h[u]) {
+        swap(h[u / 2], h[u]);
         u >>= 1;
     }
 }
@@ -28,10 +28,10 @@ void up(int u) {
 int main(void) {
     scanf("%d%d", &n, &m);
 
-    for (int i=1; i<=n; i++) scanf("%d", &h[i]);
+    for (int i = 1; i <= n; i++) scanf("%d", &h[i]);
     cnt = n;
 
-    for (int i=n/2; i; i--) down(i);
+    for (int i = n / 2; i; i--) down(i);
 
     while (m--) {
         printf("%d ", h[1]);

@@ -8,15 +8,15 @@ const int N = 100003;
 int h[N], e[N], ne[N], idx;
 
 void insert(int x) {    //AcWing 840. 模拟散列表拉链法
-    int k = (x%N+N)%N;
+    int k = (x % N + N) % N;
 
     e[idx] = x, ne[idx] = h[k], h[k] = idx++;
 }
 
 bool find(int x) {
-    int k = (x%N+N)%N;
+    int k = (x % N + N) % N;
 
-    for (int i=h[k]; i!=-1; i=ne[i]) 
+    for (int i = h[k]; i != -1; i = ne[i]) 
         if (e[i] == x)
             return true;
 

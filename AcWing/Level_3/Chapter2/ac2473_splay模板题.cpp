@@ -102,11 +102,11 @@ int main(void) {
     scanf("%d%d", &n, &m);
     
     //按序插入n个结点，并在左右分别插入两个哨兵结点（0和n+1类似treap）
-    for (int i=0; i<=n+1; i++) insert(i);
+    for (int i = 0; i <= n + 1; i++) insert(i);
     while (m--) {
         int l, r;
         scanf("%d%d", &l, &r);
-        l = get_k(l), r= get_k(r+2);    //考虑哨兵，[l, r]的前驱后继分别为l和r+2 
+        l = get_k(l), r= get_k(r + 2);    //考虑哨兵，[l, r]的前驱后继分别为l和r+2 
         //将L+1前驱L旋转至root，R+1后继R+2旋转至L，则[L+1, R+1]位于R+2左子树中
         //进一步将R+2左子树懒标记^1(1->0, 0->1)，实现原序列[L, R]的翻转。
         splay(l, 0), splay(r, l);

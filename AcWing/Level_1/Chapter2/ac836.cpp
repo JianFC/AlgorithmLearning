@@ -15,7 +15,7 @@ int find(int x) {       //AcWing 836. 合并集合
 int main(void) {
     scanf("%d%d", &n, &m);
 
-    for (int i=1; i<=n; i++) p[i] = i;
+    for (int i = 1; i <= n; i++) p[i] = i;
 
     while (m--) {
         int a, b;

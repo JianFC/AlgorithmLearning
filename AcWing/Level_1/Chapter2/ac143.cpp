@@ -11,8 +11,8 @@ int son[M][2], idx;
 
 void insert(int x) {    //AcWing 143. 最大异或对
     int p = 0;
-    for (int i=30; ~i; i--) {
-        int s = x>>i&1;
+    for (int i = 30; ~i; i--) {
+        int s = x >> i & 1;
 
         if (!son[p][s]) son[p][s] = ++idx;
         p = son[p][s];
@@ -21,11 +21,11 @@ void insert(int x) {    //AcWing 143. 最大异或对
 
 int query(int x) {
     int p = 0, res = 0;
-    for (int i=30; ~i; i--) {
-        int s = x>>i&1;
+    for (int i = 30; ~i; i--) {
+        int s = x >> i & 1;
 
         if (son[p][!s]) {
-            res += 1<<i;    //异或
+            res += 1 << i;    //异或
             p = son[p][!s];
         }
         else p = son[p][s];
@@ -37,13 +37,13 @@ int query(int x) {
 int main(void) {
     scanf("%d", &n);
 
-    for (int i=0; i<n; i++) {
+    for (int i = 0; i < n; i++) {
         scanf("%d", &a[i]);
         insert(a[i]);
     }
 
     int res = 0;
-    for (int i=0; i<n; i++) res = max(res, query(a[i]));
+    for (int i = 0; i < n; i++) res = max(res, query(a[i]));
 
     printf("%d", res);
 

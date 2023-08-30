@@ -15,7 +15,7 @@ int find(int x) {       //AcWing 837. 连通块中点的数量
 int main(void) {
     scanf("%d%d", &n, &m);
 
-    for (int i=1; i<=n; i++) p[i] = i, cnt[i] = 1;
+    for (int i = 1; i <= n; i++) p[i] = i, cnt[i] = 1;
 
     while (m--) {
         int a, b;

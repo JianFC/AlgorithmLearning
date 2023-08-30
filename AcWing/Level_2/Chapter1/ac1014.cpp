@@ -12,26 +12,26 @@ int f[N], g[N];
 int main() {    //AcWing 1014. 登山
     scanf("%d", &n);
 
-    for (int i=1; i<=n; i++) scanf("%d", &a[i]);
+    for (int i = 1; i <= n; i++) scanf("%d", &a[i]);
 
     //预处理正向LIS
-    for (int i=1; i<=n; i++) {
+    for (int i = 1; i <= n; i++) {
         f[i] = 1;
-        for (int j=1; j<i; j++)
+        for (int j = 1; j < i; j++)
             if (a[i] > a[j])
-                f[i] = max(f[i], f[j]+1);
+                f[i] = max(f[i], f[j] + 1);
     }
 
     //预处理反向LIS
-    for (int i=n; i>=1; i--) {
+    for (int i = n; i >= 1; i--) {
         g[i] = 1;
-        for (int j=n; j>i; j--)
+        for (int j = n; j > i; j--)
             if (a[i] > a[j])
-                g[i] = max(g[i], g[j]+1);
+                g[i] = max(g[i], g[j] + 1);
     }
 
     int res = 0;
-    for (int k=1; k<=n; k++) res = max(res, f[k]+g[k]-1);
+    for (int k = 1; k <= n; k++) res = max(res, f[k] + g[k] - 1);
 
     printf("%d\n", res);
 

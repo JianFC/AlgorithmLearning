@@ -22,20 +22,20 @@ int bfs(string state) {     //AcWing 845. 八数码
 
         int dist = d[t];
         int k = t.find('x');
-        int x = k/3, y = k%3;
+        int x = k / 3, y = k % 3;
 
-        for (int i=0; i<4; i++) {
-            int a = x+dx[i], b = y+dy[i]; 
+        for (int i = 0; i < 4; i++) {
+            int a = x + dx[i], b = y + dy[i]; 
 
-            if (a>=0 && a<3 && b>=0 && b<3) {
-                swap(t[a*3+b], t[k]);
+            if (a >= 0 && a < 3 && b >= 0 && b < 3) {
+                swap(t[a * 3 + b], t[k]);
 
                 if (!d.count(t)) {
-                    d[t] = dist+1;
+                    d[t] = dist + 1;
                     q.push(t);
                 }
 
-                swap(t[a*3+b], t[k]);   //恢复现场
+                swap(t[a * 3 + b], t[k]);   //恢复现场
             }
         }
     }
@@ -47,7 +47,7 @@ int main(void) {
     char s[2];
     string state;
 
-    for (int i=0; i<9; i++) {
+    for (int i = 0; i < 9; i++) {
         scanf("%s", s);
         state += *s;
     }

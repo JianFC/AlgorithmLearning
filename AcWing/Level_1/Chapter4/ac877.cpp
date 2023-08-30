@@ -9,8 +9,8 @@ int exgcd(int a, int b, int &x, int &y) {       //AcWing 877. 扩展欧几里得
     }
 
     //by + (a-a/b*b)*x = d, 经过变换，原系数y = y-a/b*x;
-    int d = exgcd(b, a%b, y, x);    
-    y -= a/b*x;
+    int d = exgcd(b, a % b, y, x);    
+    y -= a / b * x;
     return d;
 }
 
@@ -23,7 +23,7 @@ int main(void) {
         scanf("%d%d", &a, &b);
 
         int x, y;
-        int d =exgcd(a, b, x, y);
+        int d = exgcd(a, b, x, y);
         printf("%d %d\n", x, y);
     }
 

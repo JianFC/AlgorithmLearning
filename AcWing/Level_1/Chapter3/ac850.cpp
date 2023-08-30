@@ -35,10 +35,10 @@ int dijkstra() {
         st[ver] = true;
 
         //更新所有ver的出边的距离
-        for (int i=h[ver]; i!=-1; i=ne[i]) {
+        for (int i = h[ver]; i != -1; i = ne[i]) {
             int j = e[i];
-            if (dist[j] > d+w[i]) {
-                dist[j] = d+w[i];
+            if (dist[j] > d + w[i]) {
+                dist[j] = d + w[i];
                 heap.push({dist[j], j});
             }
         }
@@ -53,7 +53,7 @@ int main(void) {
 
     memset(h, -1, sizeof h);
 
-    for (int i=0; i<m; i++) {
+    for (int i = 0; i < m; i++) {
         int a, b, c;
         scanf("%d%d%d", &a, &b, &c);
         add(a, b, c);

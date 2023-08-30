@@ -19,7 +19,7 @@ int dfs(int u) {
     st[u] = true;
 
     int sum = 1, res = 0;
-    for (int i=h[u]; i!=-1; i=ne[i]) {
+    for (int i = h[u]; i != -1; i = ne[i]) {
         int j = e[i];
         if (!st[j]) {
             int s = dfs(j);
@@ -28,7 +28,7 @@ int dfs(int u) {
         }
     }
 
-    res = max(res, n-sum);
+    res = max(res, n - sum);
     ans = min(ans, res);
 
     return sum;
@@ -40,7 +40,7 @@ int main(void) {
 
     memset(h, -1, sizeof h);
 
-    for (int i=0; i<n; i++) {
+    for (int i = 0; i < n; i++) {
         int a, b;
         scanf("%d%d", &a, &b);
         add(a, b), add(b, a);

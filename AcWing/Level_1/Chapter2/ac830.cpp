@@ -14,7 +14,7 @@ int main(void) {    //AcWing 830. 单调栈
         int x;
         scanf("%d", &x);
 
-        while (tt && stk[tt]>=x) tt--;
+        while (tt && stk[tt] >= x) tt--;
         if (tt) printf("%d ", stk[tt]);
         else printf("-1 ");
 

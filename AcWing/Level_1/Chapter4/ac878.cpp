@@ -10,8 +10,8 @@ int exgcd(int a, int b, int &x, int &y) {       //AcWing 878. 线性同余方程
         return a;
     }
 
-    int d = exgcd(b, a%b, y, x);
-    y -= a/b*x;
+    int d = exgcd(b, a % b, y, x);
+    y -= a / b * x;
     return d;
 }
 
@@ -27,7 +27,7 @@ int main(void) {
         int d = exgcd(a, m, x, y);
 
         if (b % d) puts("impossible");  //当gcd(a, m)不能整除b时，无解
-        else printf("%lld\n", (LL)x*(b/d)%m);
+        else printf("%lld\n", (LL)x * (b / d) % m);
     }
 
     return 0;

@@ -13,31 +13,31 @@ void dfs(int x, int y, int s) {
 
     if (x == n) {
         if (s == n) {
-            for (int i=0; i<n; i++) puts(g[i]);
+            for (int i = 0; i < n; i++) puts(g[i]);
             puts("");
         }
 
-        return ;
+        return;
     }
 
     //不放皇后
-    dfs(x, y+1, s);
+    dfs(x, y + 1, s);
 
     //放皇后
-    if (!row[x] && !col[y] && !dg[x+y] && !udg[y-x+n]) {
+    if (!row[x] && !col[y] && !dg[x + y] && !udg[y - x + n]) {
         g[x][y] = 'Q';
-        row[x] = col[y] = dg[x+y] = udg[y-x+n] = true;
-        dfs(x, y+1, s+1);
+        row[x] = col[y] = dg[x + y] = udg[y - x + n] = true;
+        dfs(x, y + 1, s + 1);
         g[x][y] = '.';
-        row[x] = col[y] = dg[x+y] = udg[y-x+n] = false;
+        row[x] = col[y] = dg[x + y] = udg[y - x + n] = false;
     }
 }
 
 int main(void) {    ////AcWing 843. n-皇后问题
     scanf("%d", &n);
 
-    for (int i=0; i<n; i++) 
-        for (int j=0; j<n; j++)
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
             g[i][j] = '.';
 
     dfs(0, 0, 0);

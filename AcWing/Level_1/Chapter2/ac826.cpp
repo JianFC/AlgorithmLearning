@@ -57,7 +57,7 @@ int main(void) {
         }
     }
 
-    for (int i=head; i!=-1; i=ne[i]) printf("%d ", e[i]);
+    for (int i = head; i != -1; i = ne[i]) printf("%d ", e[i]);
 
     return 0;
 }

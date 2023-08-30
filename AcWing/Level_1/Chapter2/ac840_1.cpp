@@ -8,9 +8,9 @@ const int N = 200003, null = 0x3f3f3f3f;
 int h[N];
 
 int find(int x) {   //AcWing 840. 模拟散列表开放寻址法
-    int k = (x%N+N)%N;
+    int k = (x % N + N) % N;
 
-    while (h[k]!=null && h[k]!=x) {
+    while (h[k] != null && h[k]!=x) {
         k++;
         if (k == N) k = 0;
     }
