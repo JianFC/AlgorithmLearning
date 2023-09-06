@@ -8,7 +8,7 @@ using namespace std;
 //返回n中从l(高位)~r(低位)构成的数 
 int get(vector<int> num, int l, int r) {        //AcWing 338. 计数问题
     int res = 0;    // res 从0开始
-    for (int i=l; i>=r; i--) res = res*10+num[i];
+    for (int i = l; i >= r; i--) res = res * 10 + num[i];
     return res;
 }
 
@@ -34,15 +34,15 @@ int count(int n, int x) {
 
     int res = 0;    //存储结果
      //从n的最高位开始统计x出现的次数，若x=0，则从次高位开始统计
-    for (int i=n-1-!x; ~i; i--) {
+    for (int i = n - 1 - !x; ~i; i--) {
         //情况1
-        if (i < n-1) {
-            res += get(num, n-1, i+1)*power10(i);   //当x不为0，方案数为abc*10^i
-            if (!x) res -= 1*power10(i);    //当x=0时，为(abc-1)*10^i
+        if (i < n - 1) {
+            res += get(num, n - 1, i + 1) * power10(i);   //当x不为0，方案数为abc*10^i
+            if (!x) res -= 1 * power10(i);    //当x=0时，为(abc-1)*10^i
         } 
 
         //情况2.2
-        if (num[i] == x) res += get(num, i-1, 0)+1;
+        if (num[i] == x) res += get(num, i - 1, 0) + 1;
         //情况2.3
         else if (num[i] > x) res += power10(i);
     }
@@ -57,8 +57,8 @@ int main(void) {
     while (scanf("%d%d", &a, &b), a || b) {
         if (a > b) swap(a, b);
 
-        for (int i=0; i<=9; i++)
-            cout << count(b, i)-count(a-1, i) << " ";
+        for (int i = 0; i <= 9; i++)
+            cout << count(b, i) - count(a - 1, i) << " ";
         puts("");
     }
 

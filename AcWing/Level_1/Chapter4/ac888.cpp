@@ -14,13 +14,13 @@ int sum[N];
 
 //线性筛
 void get_primes(int n) {        //AcWing 888. 求组合数 IV
-    for (int i=2; i<=n; i++) {
+    for (int i = 2; i <= n; i++) {
         if (!st[i]) 
             primes[cnt++] = i;
 
-        for (int j=0; primes[j]<=n/i; j++) {
-            st[primes[j]*i] = true;
-            if (i%primes[j] == 0) break;
+        for (int j = 0; primes[j] <= n / i; j++) {
+            st[primes[j] * i] = true;
+            if (i % primes[j] == 0) break;
         }
     }
 }
@@ -33,7 +33,7 @@ int get(int n, int p) {
     //第二次循环 res += n/p^2
     //...
     while (n) {
-        res += n/p;
+        res += n / p;
         n /= p;
     }
 
@@ -44,9 +44,9 @@ int get(int n, int p) {
 vector<int> mul(vector<int> &A, int b) {
     vector<int> C;
 
-    for (int i=0, t=0; i<A.size() || t; i++) {
-        if (i < A.size()) t += A[i]*b;
-        C.push_back(t%10);
+    for (int i = 0, t = 0; i < A.size() || t; i++) {
+        if (i < A.size()) t += A[i] * b;
+        C.push_back(t % 10);
         t /= 10;
     }
 
@@ -63,9 +63,9 @@ int main(void) {
     get_primes(a);
 
     //对小于a的每一个质数，处理出其指数
-    for (int i=0; i<cnt; i++) {
+    for (int i = 0; i < cnt; i++) {
         int p = primes[i];
-        sum[i] = get(a, p) - get(b, p) - get(a-b, p);
+        sum[i] = get(a, p) - get(b, p) - get(a - b, p);
     }
 
     //保存结果
@@ -73,11 +73,11 @@ int main(void) {
     res.push_back(1);
 
     //将所有质数相乘
-    for (int i=0; i<cnt; i++)
-        for (int j=0; j<sum[i]; j++)
+    for (int i = 0; i < cnt; i++)
+        for (int j = 0; j < sum[i]; j++)
             res = mul(res, primes[i]);
 
-    for (int i=res.size()-1; i>=0; i--) printf("%d", res[i]);
+    for (int i = res.size() - 1; i >= 0; i--) printf("%d", res[i]);
     puts("");
 
     return 0;

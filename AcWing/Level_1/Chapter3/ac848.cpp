@@ -29,7 +29,7 @@ bool toposort() {
         }
     }
 
-    return tt == n-1;
+    return tt == n - 1;
 }
 
 int main(void) {

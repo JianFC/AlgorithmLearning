@@ -6,12 +6,14 @@ using namespace std;
 
 const int N = 100010;
 
+//ph[k]：第k个插入的数在堆中的下标
+//hp[i]：下标是i的点是第几个插入的数
 int h[N], ph[N], hp[N], cnt;
 
 void heap_swap(int a, int b) {      //AcWing 839. 模拟堆
-    swap(ph[hp[a]], ph[hp[b]]);
-    swap(hp[a], hp[b]);
-    swap(h[a], h[b]);
+    swap(ph[hp[a]], ph[hp[b]]);     //交换ph指针
+    swap(hp[a], hp[b]);         //交换hp指针
+    swap(h[a], h[b]);           //交换值
 }
 
 void down(int u) {

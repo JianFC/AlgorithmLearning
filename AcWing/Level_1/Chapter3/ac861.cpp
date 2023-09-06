@@ -18,12 +18,12 @@ void add(int a, int b) {    //AcWing 861. 二分图的最大匹配
 bool find(int x) {
     for (int i = h[x]; i != -1; i = ne[i]) {
         int j = e[i];
-        if (!st[j]) {
+        if (!st[j]) {   //该妹子x男生没有考虑过
             st[j] = true;
 
-            if (match[j] == 0 || find(match[j])) {
-                match[j] = x;
-                return true;
+            if (match[j] == 0 || find(match[j])) {  //该妹子没有匹配男生，或者匹配的男生可以找到下家
+                match[j] = x;   //更新匹配
+                return true;    //返回答案
             }
         }
     }
@@ -43,8 +43,8 @@ int main(void) {
     }
 
     int res = 0;
-    for (int i = 1; i <= n1; i++) {
-        memset(st, false, sizeof st);
+    for (int i = 1; i <= n1; i++) {     //从前往后考虑每个男生
+        memset(st, false, sizeof st);   //对于该男生，所有妹子都没有考虑过，清空状态
         if (find(i)) res++;
     }
 

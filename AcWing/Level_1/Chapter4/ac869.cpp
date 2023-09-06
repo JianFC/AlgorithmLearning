@@ -7,11 +7,11 @@ using namespace std;
 vector<int> get_divisors(int x) {   //AcWing 869. 试除法求约数
     vector<int> res;
 
-    for (int i=1; i<=x/i; i++) {
-        if (x%i == 0) {
+    for (int i = 1; i <= x / i; i++) {
+        if (x % i == 0) {
             res.push_back(i);
             //特判
-            if (i != x/i) res.push_back(x/i);
+            if (i != x / i) res.push_back(x / i);
         }
     }
 

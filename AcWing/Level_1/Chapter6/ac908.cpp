@@ -17,16 +17,16 @@ struct Range {
 int main(void) {    //AcWing 908. 最大不相交区间数量
     scanf("%d", &n);
 
-    for (int i=0; i<n; i++) {
+    for (int i = 0; i < n; i++) {
         int a, b;
         scanf("%d%d", &a, &b);
         range[i] = {a, b};
     }
 
-    sort(range, range+n);   //按区间右端点进行排序
+    sort(range, range + n);   //按区间右端点进行排序
 
     int res = 0, ed = -2e9;
-    for (int i=0; i<n; i++)
+    for (int i = 0; i < n; i++)
         if (range[i].l > ed) {
             res++;
             ed = range[i].r;

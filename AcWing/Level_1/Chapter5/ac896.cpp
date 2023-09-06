@@ -14,22 +14,22 @@ int q[N], len;   //q[i]表示在当前数前面，上升子序列长度为i的�
 int main(void) {    //AcWing 896. 最长上升子序列 II，二分做法
     scanf("%d", &n);
 
-    for (int i=0; i<n; i++) scanf("%d", &a[i]);
+    for (int i = 0; i < n; i++) scanf("%d", &a[i]);
 
     q[0] = -2e9;    //设置哨兵，保证初始时q时单调序列，满足二分的性质
 
     //对每一个数分别考虑
-    for (int i=0; i<n; i++) {
+    for (int i = 0; i < n; i++) {
         int l = 0, r = len;     //二分左右边界
 
         while (l < r) {
-            int mid = l+r+1>>1;
+            int mid = l + r + 1 >> 1;
             if (q[mid] < a[i]) l = mid;
-            else r = mid-1;
+            else r = mid - 1;
         }
 
-        len = max(len, r+1);
-        q[r+1] = a[i];  //由于二分性质，更新长度为r+1上升子序列结尾的最小值。
+        len = max(len, r + 1);
+        q[r + 1] = a[i];  //由于二分性质，更新长度为r+1上升子序列结尾的最小值。
     }
 
     cout << len << endl;

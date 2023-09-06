@@ -19,20 +19,20 @@ int main(void) {    //AcWing 907. 区间覆盖
     scanf("%d%d", &st, &ed);
     scanf("%d", &n);
 
-    for (int i=0; i<n; i++) {
+    for (int i = 0; i < n; i++) {
         int a, b;
         scanf("%d%d", &a, &b);
         range[i] = {a, b};
     }
 
-    sort(range, range+n);   //按照左端点排序
+    sort(range, range + n);   //按照左端点排序
 
     int res = 0;
     bool flag = false;
     //双指针从i开始从前往后找到能覆盖start且右端点最大的值
-    for (int i=0; i<n; i++) {
+    for (int i = 0; i < n; i++) {
         int j = i, r = -2e9;    //注意j从i开始
-        while (j<n && range[j].l<=st) {
+        while (j<n && range[j].l <= st) {
             r = max(range[j].r, r);
             j++;
         }
@@ -46,7 +46,7 @@ int main(void) {    //AcWing 907. 区间覆盖
         }
 
         st = r;
-        i = j-1;    //更新i
+        i = j - 1;    //更新i
     }
 
     if (flag) printf("%d\n", res);

@@ -18,16 +18,16 @@ struct Range {
 int main(void) {    //AcWing 906. 区间分组
     scanf("%d", &n);
 
-    for (int i=0; i<n; i++) {
+    for (int i = 0; i < n; i++) {
         int a, b;
         scanf("%d%d", &a, &b);
         range[i] = {a, b};
     }
 
-    sort(range, range+n);
+    sort(range, range + n);
 
     priority_queue<int, vector<int>, greater<int>> heap;
-    for (int i=0; i<n; i++) 
+    for (int i = 0; i < n; i++) 
         //若前面所有组最小的右端点最大值都大于等于该区间左端点，则新开一组
         if (heap.empty() || heap.top() >= range[i].l) heap.push(range[i].r);
         else {

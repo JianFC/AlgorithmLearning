@@ -18,8 +18,8 @@ int main(void) {        //AcWing 871. 约数之和
         int x;
         scanf("%d", &x);
 
-        for (int i=2; i<=x/i; i++) 
-            while (x%i == 0) 
+        for (int i = 2; i <= x / i; i++) 
+            while (x % i == 0) 
                 x /= i, primes[i]++;
 
         if (x > 1) primes[x]++;
@@ -31,9 +31,9 @@ int main(void) {        //AcWing 871. 约数之和
 
         //快速计算p^1+p^2+...+p^ak
         int t = 1;
-        while (a--)  t = (t*p+1)%mod;
+        while (a--)  t = (t * p + 1) % mod;
 
-        res = res*t%mod;
+        res = res * t % mod;
     }
 
     cout << res;

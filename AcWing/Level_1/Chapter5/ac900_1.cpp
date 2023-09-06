@@ -3,7 +3,7 @@
 
 using namespace std;
 
-const int N = 1010, mod = 1e9+7;
+const int N = 1010, mod = 1e9 + 7;
 
 int n;
 int f[N];   //f[i][j]降去第一维
@@ -17,9 +17,9 @@ int main(void) {    //AcWing 900. 整数划分 完全背包解法
     //初始时，当j!=0时，f[j]=0，在没有选任何数的情况下不可能装满j
 
     //类似完全背包求解
-    for (int i=1; i<=n; i++)
-        for (int j=i; j<=n; j++)    //注意循环起点位置
-            f[j] = (f[j]+f[j-i]) % mod;     //f[i][j] = f[i-1][j]+f[i][j-i];
+    for (int i = 1; i <= n; i++)
+        for (int j = i; j <= n; j++)    //注意循环起点位置
+            f[j] = (f[j] + f[j - i]) % mod;     //f[i][j] = f[i-1][j]+f[i][j-i];
 
     cout << f[n] << endl;
 

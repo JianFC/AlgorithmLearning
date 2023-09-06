@@ -10,10 +10,10 @@ bool st[N];
 
 //朴素筛法，时间复杂度O(nlnn)，可视为O(nlogn)
 void get_primes(int n) {        //AcWing 868. 筛质数, 朴素筛法，时间复杂度O(nlnn)
-    for (int i=2; i<=n; i++) {
+    for (int i = 2; i <= n; i++) {
         if (!st[i]) primes[cnt++] = i;
 
-        for (int j=i+i; j<=n; j+=i) st[j] = true;
+        for (int j = i + i; j <= n; j += i) st[j] = true;
     }
 }
 

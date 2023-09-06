@@ -21,7 +21,7 @@ void dfs(int u) {
     f[u][1] = happy[u]; //选择u，加上u的happy值
 
     //枚举u的所有儿子
-    for (int i=h[u]; i!=-1; i=ne[i]) {
+    for (int i = h[u]; i != -1; i = ne[i]) {
         int j = e[i];
         dfs(j);     //递归搜索j的儿子
 
@@ -34,11 +34,11 @@ void dfs(int u) {
 int main(void) {
     scanf("%d", &n);
 
-    for (int i=1; i<=n; i++) scanf("%d", &happy[i]);
+    for (int i = 1; i <= n; i++) scanf("%d", &happy[i]);
 
     memset(h, -1, sizeof h);    //初始化链表头结点
 
-    for (int i=0; i<n-1; i++) {
+    for (int i = 0; i < n - 1; i++) {
         int a, b;
         scanf("%d%d", &a, &b);
         add(b, a);  //新增一条b到a的边，表示b是a的上级

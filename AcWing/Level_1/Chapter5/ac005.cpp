@@ -13,7 +13,7 @@ int main(void) {    //AcWing 5. 多重背包问题 II优化
     scanf("%d%d", &n, &m);
 
     //通过二进制优化将多重背包转换为01背包问题
-    for (int i=1; i<=n; i++) {
+    for (int i = 1; i <= n; i++) {
         int a, b, s;    //a表示容量，b表示价值，s表示数量
         scanf("%d%d%d", &a, &b, &s);
 
@@ -21,23 +21,23 @@ int main(void) {    //AcWing 5. 多重背包问题 II优化
         int k = 1;
         while (k <= s) {
             cnt++;
-            v[cnt] = k*a;
-            w[cnt] = k*b;
+            v[cnt] = k * a;
+            w[cnt] = k * b;
             s -= k, k *= 2; //s减去k，k倍增
         }
 
         // 若s还有剩余，则补上C = S-(1+2+..+2^k) 
         if (s) {
             cnt++;
-            v[cnt] = s*a;
-            w[cnt] = s*b;
+            v[cnt] = s * a;
+            w[cnt] = s * b;
         }
     }
 
     //01背包问题求解
-    for (int i=1; i<=cnt; i++)
-        for (int j=m; j>=v[i]; j--) 
-            f[j] = max(f[j], f[j-v[i]]+w[i]);
+    for (int i = 1; i <= cnt; i++)
+        for (int j = m; j >= v[i]; j--) 
+            f[j] = max(f[j], f[j - v[i]] + w[i]);
 
     cout << f[m] << endl;
 

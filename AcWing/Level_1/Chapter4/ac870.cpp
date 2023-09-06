@@ -20,15 +20,15 @@ int main(void) {    //AcWing 870. 约数个数
         int x;
         scanf("%d", &x);
 
-        for (int i=2; i<=x/i; i++) 
-            while (x%i == 0) 
+        for (int i = 2; i <= x / i; i++) 
+            while (x % i == 0) 
                 x /= i, primes[i]++;
 
         if (x > 1) primes[x]++;
     }
 
     LL res = 1;
-    for (auto p: primes) res = res*(p.second+1)%mod;
+    for (auto p: primes) res = res * (p.second + 1) % mod;
 
     cout << res << endl;
 

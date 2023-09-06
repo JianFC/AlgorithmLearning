@@ -6,14 +6,14 @@ using namespace std;
 int phi(int x) {        //AcWing 873. 欧拉函数
     int res = x;
 
-    for (int i=2; i<=x/i; i++) {
-        if (x%i == 0) {
-            res = res/i*(i-1);  //整数不支持小数除法，将res*(1-1/i)变换为res/i*(i-1)
-            while (x%i == 0) x /= i;
+    for (int i = 2; i <= x / i; i++) {
+        if (x % i == 0) {
+            res = res / i * (i - 1);  //整数不支持小数除法，将res*(1-1/i)变换为res/i*(i-1)
+            while (x % i == 0) x /= i;
         }
     }
 
-    if (x > 1) res = res/x*(x-1);
+    if (x > 1) res = res / x * (x - 1);
 
     return res;
 }
