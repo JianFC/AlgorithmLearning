@@ -4,7 +4,7 @@
 using namespace std;
 
 vector<int> mul(vector<int> &A, int b) {    //AcWing 793. 高精度乘法
-    vector<int> C;
+    vector<int> C;      //存储答案
 
     for (int i = 0, t = 0; i < A.size() || t; i++) {
         if (i < A.size()) t += A[i] * b;
@@ -12,7 +12,8 @@ vector<int> mul(vector<int> &A, int b) {    //AcWing 793. 高精度乘法
         t /= 10;
     }
 
-    while (C.size() > 1 && C.back() == 0) C.pop_back();
+    while (C.size() > 1 && C.back() == 0) C.pop_back();     //处理前导0
+    
     return C;
 }
 

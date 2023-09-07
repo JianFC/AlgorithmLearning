@@ -1,13 +1,13 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;    //AcWing 798. 差分矩阵
 
 const int N = 1010;
 
 int n, m, q;
 int a[N][N], b[N][N];
 
-void insert(int x1, int y1, int x2, int y2, int c) {    //AcWing 798. 差分矩阵
+void insert(int x1, int y1, int x2, int y2, int c) {    //插入函数保护
     b[x1][y1] += c;
     b[x2 + 1][y1] -= c;
     b[x1][y2 + 1] -= c;
@@ -23,7 +23,7 @@ int main(void) {
 
     for (int i = 1; i <= n; i++)
         for (int j = 1; j <= m; j++)
-            insert(i, j, i, j, a[i][j]);
+            insert(i, j, i, j, a[i][j]);    //利用插入函数构造b数组
 
     while (q--) {
         int x1, y1, x2, y2, c;
@@ -33,7 +33,7 @@ int main(void) {
 
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= m; j++)
-            b[i][j] += b[i - 1][j] + b[i][j - 1] - b[i - 1][j - 1], printf("%d ", b[i][j]);
+            b[i][j] += b[i - 1][j] + b[i][j - 1] - b[i - 1][j - 1], printf("%d ", b[i][j]);     //构造前缀和数组
         puts("");
     }
 

@@ -3,16 +3,16 @@
 
 using namespace std;
 
-const int N = 200003, null = 0x3f3f3f3f;
+const int N = 200003, null = 0x3f3f3f3f;    //null不在x范围内的一个数，标记
 
 int h[N];
 
 int find(int x) {   //AcWing 840. 模拟散列表开放寻址法
-    int k = (x % N + N) % N;
+    int k = (x % N + N) % N;    //哈希函数
 
-    while (h[k] != null && h[k]!=x) {
+    while (h[k] != null && h[k] != x) {     //当x存在哈希表中时，返回x的位置，不存在时，返回x应该存储的位置
         k++;
-        if (k == N) k = 0;
+        if (k == N) k = 0;  //防止越界，循环操作
     }
 
     return k;

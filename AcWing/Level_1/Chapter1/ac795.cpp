@@ -12,7 +12,7 @@ int main(void) {    //AcWing 795. 前缀和
 
     for (int i = 1; i <= n; i++) scanf("%d", &a[i]);
 
-    for (int i = 1; i <= n; i++) s[i] = s[i - 1] + a[i];
+    for (int i = 1; i <= n; i++) s[i] = s[i - 1] + a[i];    //前缀和初始化
 
     while (m--) {
         int l, r;
