@@ -12,7 +12,7 @@ int son[M][2], idx;
 void insert(int x) {    //AcWing 143. 最大异或对
     int p = 0;
     for (int i = 30; ~i; i--) {
-        int s = x >> i & 1;
+        int s = x >> i & 1;     //位运算
 
         if (!son[p][s]) son[p][s] = ++idx;
         p = son[p][s];

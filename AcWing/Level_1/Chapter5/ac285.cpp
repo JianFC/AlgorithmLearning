@@ -50,7 +50,7 @@ int main(void) {
 
     dfs(root);  //从根结点递归往下搜索
 
-    printf("%d\n", max(f[root][0], f[root][1]));
+    printf("%d\n", max(f[root][0], f[root][1]));    //校长参与or校长不参与
 
     return 0;
 }

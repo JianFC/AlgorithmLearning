@@ -7,7 +7,7 @@ const int N = 100010, M = N;
 
 int n, m;
 int h[N], e[M], ne[M], idx;
-int d[N];
+int d[N];   //每个点到1号点的距离
 int q[M], hh, tt = -1;
 
 void add(int a, int b){     //AcWing 847. 图中点的层次
@@ -38,6 +38,7 @@ int bfs() {
 int main(void) {
     scanf("%d%d", &n, &m);
 
+    //注意初始化的位置
     memset(h, -1, sizeof h);
 
     for (int i = 0; i < m; i++) {

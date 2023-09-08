@@ -26,16 +26,16 @@ int main(void) {        //AcWing 291. 蒙德里安的梦想
                     if (cnt & 1) st[i] = false;     //奇数个1
                     cnt = 0;    //cnt清零
                 }
-                else cnt++;
+                else cnt++;     //更新cnt
 
             if (cnt & 1) st[i] = false;
         }
 
         //DP过程
         f[0][0] = 1;    //摆放第0列，没有上一列，所以行状态是0的方案数为1
-        //其余f[0][0~1<<n] = 0
+        //其余f[0][1~1<<n] = 0
 
-        for (int i = 1; i <= m; i++)
+        for (int i = 1; i <= m; i++)    //从第1列开始，多计算1列
             for (int j = 0; j < 1 << n; j++)
                 for (int k = 0; k < 1 << n; k++)
                     if ((j & k) == 0 && st[j | k]) 

@@ -8,8 +8,8 @@ typedef pair<int, int> PII;
 const int N = 110;
 
 int n, m;
-int g[N][N], d[N][N];
-PII q[N * N], pre[N][N];
+int g[N][N], d[N][N];       //d[i][j]记录起点到点(i, j)的距离
+PII q[N * N], pre[N][N];    //pre记录路径，逆序
 int hh, tt = -1;
 
 int bfs() {     //AcWing 844. 走迷宫

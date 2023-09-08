@@ -7,8 +7,8 @@ using namespace std;
 const int N = 100010;
 
 char str[N];
-int num[N];
-char op[N];
+int num[N];     //数字栈
+char op[N];     //表达式栈
 int tt1, tt2;
 
 void eval() {       //AcWing 3302. 表达式求值

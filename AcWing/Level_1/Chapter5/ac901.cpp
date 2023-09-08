@@ -38,7 +38,7 @@ int main(void) {
         for (int j = 1; j <= m; j++)
             scanf("%d", &h[i][j]);
 
-    memset(f, -1, sizeof f);    //记忆化搜索初始化
+    memset(f, -1, sizeof f);    //记忆化搜索初始化，表示每个状态都还没被算过
 
     int res = 0;    //存储答案，全局最长滑雪长度
     for (int i = 1; i <= n; i++)
