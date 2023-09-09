@@ -21,7 +21,7 @@ void get_primes(int n) {        ////AcWing 868. 筛质数
         for (int j = 0; primes[j] <= n / i; j++) {
             st[primes[j] * i] = true;
 
-            if (i % primes[j] == 0) break;
+            if (i % primes[j] == 0) break;  //primes[j]一定是i的最小质因子
         }
     }
 }

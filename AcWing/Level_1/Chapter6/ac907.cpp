@@ -32,7 +32,7 @@ int main(void) {    //AcWing 907. 区间覆盖
     //双指针从i开始从前往后找到能覆盖start且右端点最大的值
     for (int i = 0; i < n; i++) {
         int j = i, r = -2e9;    //注意j从i开始
-        while (j<n && range[j].l <= st) {
+        while (j < n && range[j].l <= st) {
             r = max(range[j].r, r);
             j++;
         }

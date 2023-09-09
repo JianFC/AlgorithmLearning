@@ -47,7 +47,7 @@ int main(void) {
             tt2--;
         }
         else {
-            while (tt2 && op[tt2]!='(' && pr[op[tt2]] >= pr[c]) eval();
+            while (tt2 && op[tt2] != '(' && pr[op[tt2]] >= pr[c]) eval();
             op[++tt2] = c;
         }
     }

@@ -13,7 +13,7 @@ int a[N];
 int main(void) {    //AcWing 104. 货仓选址
     scanf("%d", &n);
 
-    for (int i=0; i<n; i++) scanf("%d", &a[i]);
+    for (int i = 0; i < n; i++) scanf("%d", &a[i]);
 
     sort(a, a + n);   //从小到大排序，用于求出中位数
 

@@ -6,7 +6,7 @@ using namespace std;
 
 typedef long long LL;
 
-const int mod = 1e9+7;
+const int mod = 1e9 + 7;
 
 int main(void) {        //AcWing 871. 约数之和
     int n;

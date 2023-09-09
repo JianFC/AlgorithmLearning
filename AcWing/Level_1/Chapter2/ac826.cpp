@@ -49,7 +49,7 @@ int main(void) {
         else if (op == 'D') {
             scanf("%d", &k);
             if (!k) head = ne[head];
-            else remove(k-1);
+            else remove(k - 1);
         }
         else {
             scanf("%d%d", &k, &x);

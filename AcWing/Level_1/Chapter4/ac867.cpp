@@ -3,8 +3,8 @@
 using namespace std;
 
 void divide(int x) {        //AcWing 867. 分解质因数
-    for (int i = 2; i <= x / i; i++) {
-        if (x % i == 0) {
+    for (int i = 2; i <= x / i; i++) {  
+        if (x % i == 0) {   //成立时 i一定是质数
             int s = 0;
             while (x % i == 0) x /= i, s++;
             printf("%d %d\n", i, s);

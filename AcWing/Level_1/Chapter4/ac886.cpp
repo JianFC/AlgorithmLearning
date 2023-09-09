@@ -4,7 +4,7 @@ using namespace std;
 
 typedef long long LL;
 
-const int N = 100010, mod = 1e9+7;
+const int N = 100010, mod = 1e9 + 7;
 
 // fact[i]表示i! % mod, infact[i]表示(i!)^(-1) % mod
 LL fact[N], infact[N]; 

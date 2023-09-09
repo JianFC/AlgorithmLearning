@@ -4,7 +4,7 @@ using namespace std;
 
 typedef long long LL;
 
-const int mod = 1e9+7;
+const int mod = 1e9 + 7;
 
 //快速幂
 LL qmi(int a, int k, int p) {   //AcWing 889. 满足条件的01序列

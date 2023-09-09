@@ -2,10 +2,11 @@
 
 using namespace std;
 
-const int N = 2010, mod = 1e9+7;
+const int N = 2010, mod = 1e9 + 7;
 
 int c[N][N];
 
+//预处理
 void init() {       //AcWing 885. 求组合数 I
     for (int i = 0; i < N; i++)
         for (int j = 0; j <= i; j++)
