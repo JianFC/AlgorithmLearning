@@ -37,7 +37,7 @@ int main(void) {
     int n, m = 0;
     scanf("%d", &n);
 
-    while (n--) {
+    while (n -- ) {
         int k, x;
         char op[10];
         scanf("%s", op);
