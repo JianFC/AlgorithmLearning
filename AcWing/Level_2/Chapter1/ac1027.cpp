@@ -7,7 +7,7 @@ const int N = 15;
 
 int n;
 int w[N][N];
-int f[N * 2][N][N];   //f[k][i1][i2], k=i1+j1=i2+j2
+int f[N * 2][N][N];   //f[k][i1][i2], k = i1 + j1 = i2 + j2
 
 int main() {    //AcWing 1027. 方格取数
     scanf("%d", &n);

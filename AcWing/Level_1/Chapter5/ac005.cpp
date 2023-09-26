@@ -20,7 +20,7 @@ int main(void) {    //AcWing 5. 多重背包问题 II优化
         //将s[i]件物品划分为log(s[i])上取整组
         int k = 1;
         while (k <= s) {
-            cnt++;
+            cnt ++;
             v[cnt] = k * a;
             w[cnt] = k * b;
             s -= k, k *= 2; //s减去k，k倍增
@@ -35,8 +35,8 @@ int main(void) {    //AcWing 5. 多重背包问题 II优化
     }
 
     //01背包问题求解
-    for (int i = 1; i <= cnt; i++)
-        for (int j = m; j >= v[i]; j--) 
+    for (int i = 1; i <= cnt; i ++)
+        for (int j = m; j >= v[i]; j --) 
             f[j] = max(f[j], f[j - v[i]] + w[i]);
 
     cout << f[m] << endl;
