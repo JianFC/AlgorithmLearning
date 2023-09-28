@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 
-using namespace std;
+using namespace std;    //1020. 潜水员
 
 const int N = 25, M = 90;
 

@@ -1,6 +1,6 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;    //AcWing 8. 二维费用的背包问题
 
 const int N = 110;
 
