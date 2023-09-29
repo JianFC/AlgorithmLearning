@@ -86,6 +86,17 @@
         "cctype": "cpp",
         "string": "cpp",
         "SCAN.C": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "array": "cpp",
+        "atomic": "cpp",
+        "clocale": "cpp",
+        "cstdarg": "cpp",
+        "cwctype": "cpp",
+        "unordered_set": "cpp",
+        "memory_resource": "cpp",
+        "optional": "cpp",
+        "string_view": "cpp",
+        "fstream": "cpp",
+        "sstream": "cpp"
     }, // 格式化时调整include的顺序（按字母排序）
 }
