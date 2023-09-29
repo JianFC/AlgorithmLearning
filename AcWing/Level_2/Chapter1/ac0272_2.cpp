@@ -12,13 +12,13 @@ int f[N][N];    //f[i][j]代表的集合：所有由a序列前i个字符，b序�
 
 int main(void) {    //272. 最长公共上升子序列，优化做法，时间复杂度O(n^2)
     scanf("%d", &n);
-    for (int i = 1; i <= n; i++) scanf("%d", &a[i]);
-    for (int i = 1; i <= n; i++) scanf("%d", &b[i]);
+    for (int i = 1; i <= n; i ++) scanf("%d", &a[i]);
+    for (int i = 1; i <= n; i ++) scanf("%d", &b[i]);
     
-    for (int i = 1; i <= n; i++) {
+    for (int i = 1; i <= n; i ++) {
         
         int maxv = 1;
-        for (int j = 1; j <= n; j++) {
+        for (int j = 1; j <= n; j ++) {
             f[i][j] = f[i - 1][j];
             
             if (b[j] < a[i]) maxv = max(maxv, f[i - 1][j] + 1); //求出f[i-1][k]+1的最大值
@@ -36,7 +36,7 @@ int main(void) {    //272. 最长公共上升子序列，优化做法，时间�
     }
     
     int res = 0;
-    for (int i = 1; i <= n; i++) res = max(res, f[n][i]);
+    for (int i = 1; i <= n; i ++) res = max(res, f[n][i]);
     
     printf("%d", res);
     
