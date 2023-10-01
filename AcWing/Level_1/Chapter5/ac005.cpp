@@ -13,7 +13,7 @@ int main(void) {    //AcWing 5. 多重背包问题 II优化
     scanf("%d%d", &n, &m);
 
     //通过二进制优化将多重背包转换为01背包问题
-    for (int i = 1; i <= n; i++) {
+    for (int i = 1; i <= n; i ++) {
         int a, b, s;    //a表示容量，b表示价值，s表示数量
         scanf("%d%d%d", &a, &b, &s);
 

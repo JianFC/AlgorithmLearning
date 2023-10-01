@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 
-using namespace std;
+using namespace std;    //AcWing 1018. 最低通行费
 
 const int N = 110, INF = 2e9;
 
@@ -9,7 +9,7 @@ int n;
 int w[N][N];
 int f[N][N];
 
-int main() {    //AcWing 1018. 最低通行费
+int main() {    
     scanf("%d", &n);
 
     for (int i = 1; i <= n; i++)
