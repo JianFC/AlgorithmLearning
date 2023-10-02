@@ -1,17 +1,17 @@
 #include <iostream>
 #include <cstring>
 
-using namespace std;
+using namespace std;        //AcWing 846. 树的重心
 
-const int N = 100010, M = 2*N;
+const int N = 100010, M = 2 * N;
 
 int n;
 int h[N], e[M], ne[M], idx;
 bool st[N];
 int ans = N;
 
-void add(int a, int b) {    //AcWing 846. 树的重心
-    e[idx] = b, ne[idx] = h[a], h[a] = idx++;
+void add(int a, int b) {    
+    e[idx] = b, ne[idx] = h[a], h[a] = idx ++;
 }
 
 //返回以u为根的子树的结点个数
@@ -40,7 +40,7 @@ int main(void) {
 
     memset(h, -1, sizeof h);
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i ++) {
         int a, b;
         scanf("%d%d", &a, &b);
         add(a, b), add(b, a);

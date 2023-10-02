@@ -17,9 +17,9 @@ vector<PII> add, query;     //add存储所有插入操作，query存储所有查
 //去重
 vector<int>::iterator unique(vector<int> &a) {  //unique函数  
     int j = 0;
-    for (int i = 0; i < a.size(); i++) 
+    for (int i = 0; i < a.size(); i ++) 
         if (!i || a[i] != a[i - 1])
-            a[j++] = a[i];      //a[0] - a[j - 1] 存储所有不同的数
+            a[j ++] = a[i];      //a[0] - a[j - 1] 存储所有不同的数
 
     return a.begin() + j;
 }
@@ -39,14 +39,14 @@ int find(int x) {   //找到第一个大于等于x的位置
 int main(void) {
     scanf("%d%d", &n, &m);
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i ++) {
         int x, c;
         scanf("%d%d", &x, &c);
         add.push_back({x, c});
         all.push_back(x);
     }
 
-    for (int i = 0; i < m; i++) {
+    for (int i = 0; i < m; i ++) {
         int l, r;
         scanf("%d%d", &l, &r);
         query.push_back({l, r});

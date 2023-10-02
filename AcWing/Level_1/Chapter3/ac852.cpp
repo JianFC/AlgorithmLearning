@@ -3,7 +3,7 @@
 #include <queue>
 #include <algorithm>
 
-using namespace std;
+using namespace std;        //AcWing 852. spfa判断负环
 
 const int N = 2010, M = 10010;
 
@@ -13,13 +13,13 @@ int dist[N], cnt[N];    //cnt[x]当前1号点到x最短路径的边数
 queue<int> q;
 bool st[N];
 
-void add(int a, int b, int c) {     //AcWing 852. spfa判断负环
-    e[idx] = b, w[idx] = c, ne[idx] = h[a], h[a] = idx++;
+void add(int a, int b, int c) {     
+    e[idx] = b, w[idx] = c, ne[idx] = h[a], h[a] = idx ++;
 }
 
 bool spfa() {
     //判断负环可以不用初始化，初始时将所有点加入队列
-    for (int i = 1; i <= n; i++) {
+    for (int i = 1; i <= n; i ++) {
         q.push(i);
         st[i] = true;
     }
@@ -53,7 +53,7 @@ int main(void) {
 
     memset(h, -1, sizeof h);
 
-    for (int i = 0; i < m; i++) {
+    for (int i = 0; i < m; i ++) {
         int a, b, c;
         scanf("%d%d%d", &a, &b, &c);
         add(a, b, c);

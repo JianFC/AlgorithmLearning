@@ -2,7 +2,7 @@
 #include <cstring>
 #include <algorithm>
 
-using namespace std;
+using namespace std;        //AcWing 285. 没有上司的舞会
 
 const int N = 6010, M = 6010;;
 
@@ -13,8 +13,8 @@ bool has_fa[N];     //用于记录第i个结点是否有父结点，树根没有
 int f[N][2];//f[u][0]表示所有从以u为根的子树中选择的方案，且不选u的方案集合的最大h值
             //f[u][1]表示所有从以u为根的子树中选择的方案，且选u的方案集合的最大h值
 
-void add(int a, int b) {        //AcWing 285. 没有上司的舞会
-    e[idx] = b, ne[idx] = h[a], h[a] = idx++;
+void add(int a, int b) {        
+    e[idx] = b, ne[idx] = h[a], h[a] = idx ++;
 }
 
 void dfs(int u) {
@@ -34,11 +34,11 @@ void dfs(int u) {
 int main(void) {
     scanf("%d", &n);
 
-    for (int i = 1; i <= n; i++) scanf("%d", &happy[i]);
+    for (int i = 1; i <= n; i ++) scanf("%d", &happy[i]);
 
     memset(h, -1, sizeof h);    //初始化链表头结点
 
-    for (int i = 0; i < n - 1; i++) {
+    for (int i = 0; i < n - 1; i ++) {
         int a, b;
         scanf("%d%d", &a, &b);
         add(b, a);  //新增一条b到a的边，表示b是a的上级
@@ -46,7 +46,7 @@ int main(void) {
     }
 
     int root = 1;
-    while (has_fa[root]) root++;    //找出根结点
+    while (has_fa[root]) root ++;    //找出根结点
 
     dfs(root);  //从根结点递归往下搜索
 

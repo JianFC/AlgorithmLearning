@@ -2,7 +2,7 @@
 #include <cstring>
 #include <algorithm>
 
-using namespace std;
+using namespace std;        //AcWing 860. 染色法判定二分图
 
 const int N = 100010, M = 2*N;
 
@@ -10,8 +10,8 @@ int n, m;
 int h[N], e[M], ne[M], idx;
 int color[N];   //第i个结点的颜色
 
-void add(int a, int b) {        //AcWing 860. 染色法判定二分图
-    e[idx] = b, ne[idx] = h[a], h[a] = idx++;
+void add(int a, int b) {        
+    e[idx] = b, ne[idx] = h[a], h[a] = idx ++;
 }
 
 bool dfs(int u, int c) {
@@ -33,7 +33,7 @@ int main(void) {
 
     memset(h, -1, sizeof h);
 
-    for (int i = 0; i < m; i++) {
+    for (int i = 0; i < m; i ++) {
         int a, b;
         scanf("%d%d", &a, &b);
         add(a, b), add(b, a);
@@ -41,7 +41,7 @@ int main(void) {
 
 
     bool flag = true;
-    for (int i = 1; i <= n; i++) {
+    for (int i = 1; i <= n; i ++) {
         if (!color[i]) {
             if (!dfs(i, 1)) {
                 flag = false;

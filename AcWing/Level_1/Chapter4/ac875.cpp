@@ -1,11 +1,11 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;        //AcWing 875. 快速幂
 
 typedef long long LL;
 
 // 返回 a^k mod p
-LL qmi(int a, int k, int p) {       //AcWing 875. 快速幂
+LL qmi(int a, int k, int p) {       
     LL res = 1 % p;
     while (k) {
         //初始时a = a^(2^0) 
@@ -21,7 +21,7 @@ int main(void) {
     int n;
     scanf("%d", &n);
 
-    while (n--) {
+    while (n --) {
         int a, k, p;
         scanf("%d%d%d", &a, &k, &p);
         printf("%lld\n", qmi(a, k, p));

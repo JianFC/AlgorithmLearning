@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <vector>
 
-using namespace std;
+using namespace std;        //AcWing 803. 区间合并
 
 typedef pair<int, int> PII;
 
@@ -11,7 +11,7 @@ const int N = 100010;
 int n;
 vector<PII> segs;
 
-void merge(vector<PII> &segs) {     //AcWing 803. 区间合并
+void merge(vector<PII> &segs) {     
     vector<PII> res;
 
     sort(segs.begin(), segs.end());
@@ -33,7 +33,7 @@ void merge(vector<PII> &segs) {     //AcWing 803. 区间合并
 int main(void) {
     scanf("%d", &n);
 
-    while (n--) {
+    while (n --) {
         int l, r;
         scanf("%d%d", &l, &r);
         segs.push_back({l, r});

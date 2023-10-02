@@ -1,10 +1,10 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
+using namespace std;    //AcWing 792. 高精度减法
 
 //判断A是否大于等于B
-bool cmp(vector<int> &A, vector<int> &B) {      //AcWing 792. 高精度减法
+bool cmp(vector<int> &A, vector<int> &B) {      
     if (A.size() != B.size()) return A.size() > B.size();   //如果A和B位数不同
     else {      //位数相同
         for (int i = A.size() - 1; i >= 0; i --)     //从高位开始比较每一位的大小

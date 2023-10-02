@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 
-using namespace std;
+using namespace std;        //AcWing 908. 最大不相交区间数量
 
 const int N = 100010;
 
@@ -14,10 +14,10 @@ struct Range {
     }
 } range[N];
 
-int main(void) {    //AcWing 908. 最大不相交区间数量
+int main(void) {    
     scanf("%d", &n);
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i ++) {
         int a, b;
         scanf("%d%d", &a, &b);
         range[i] = {a, b};
@@ -26,9 +26,9 @@ int main(void) {    //AcWing 908. 最大不相交区间数量
     sort(range, range + n);   //按区间右端点进行排序
 
     int res = 0, ed = -2e9;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i ++)
         if (range[i].l > ed) {
-            res++;
+            res ++;
             ed = range[i].r;
         }
 

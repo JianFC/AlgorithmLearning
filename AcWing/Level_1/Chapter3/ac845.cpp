@@ -4,12 +4,12 @@
 #include <queue>
 #include <unordered_map>
 
-using namespace std;
+using namespace std;         //AcWing 845. 八数码
 
 queue<string> q;
 unordered_map<string, int> d;
 
-int bfs(string state) {     //AcWing 845. 八数码
+int bfs(string state) {    
     d[state] = 0;
     q.push(state); 
 
@@ -24,7 +24,7 @@ int bfs(string state) {     //AcWing 845. 八数码
         int k = t.find('x');
         int x = k / 3, y = k % 3;
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i ++) {
             int a = x + dx[i], b = y + dy[i]; 
 
             if (a >= 0 && a < 3 && b >= 0 && b < 3) {
@@ -47,7 +47,7 @@ int main(void) {
     char s[2];
     string state;
 
-    for (int i = 0; i < 9; i++) {
+    for (int i = 0; i < 9; i ++) {
         scanf("%s", s);
         state += *s;
     }

@@ -11,12 +11,12 @@ bool col[N], dg[N], udg[N];  //dg对角线，udg反对角线，dg数量是n的�
 //全排列搜索顺序
 void dfs(int u) {
     if (u == n) {
-        for (int i = 0; i < n; i++) puts(g[i]);
+        for (int i = 0; i < n; i ++) puts(g[i]);
         puts("");
         return ;
     }
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i ++) {
         if (!col[i] && !dg[i + u] && !udg[i - u + n]) {
             g[u][i] = 'Q';
             col[i] = dg[i + u] = udg[i - u + n] = true;
@@ -31,8 +31,8 @@ void dfs(int u) {
 int main(void) {    //AcWing 843. n-皇后问题
     scanf("%d", &n);
 
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j<n; j++)
+    for (int i = 0; i < n; i ++)
+        for (int j = 0; j<n; j ++)
             g[i][j] = '.';
 
     dfs(0);

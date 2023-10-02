@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 
-using namespace std;
+using namespace std;        //AcWing 905. 区间选点
 
 const int N = 100010;
 
@@ -14,10 +14,10 @@ struct Range {
     }
 } range[N];
 
-int main(void) {    //AcWing 905. 区间选点
+int main(void) {    
     scanf("%d", &n);
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i ++) {
         int a, b;
         scanf("%d%d", &a, &b);
         range[i] = {a, b};
@@ -28,9 +28,9 @@ int main(void) {    //AcWing 905. 区间选点
     int res = 0, ed = -2e9; //最开始没有选择区间,ed初始化为负无穷
 
     //从前往后依次遍历每个区间
-    for (int i = 0; i < n; i++) 
+    for (int i = 0; i < n; i ++) 
         if (range[i].l > ed) {
-            res++;  //答案增加
+            res ++;  //答案增加
             ed = range[i].r;    //更新ed
         }
 

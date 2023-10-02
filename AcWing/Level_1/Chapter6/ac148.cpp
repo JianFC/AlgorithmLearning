@@ -2,15 +2,15 @@
 #include <algorithm>
 #include <queue>
 
-using namespace std;
+using namespace std;    //AcWing 148. 合并果子
 
-int main(void) {    //AcWing 148. 合并果子
+int main(void) {    
     int n;
     scanf("%d", &n);
 
     priority_queue<int, vector<int>, greater<int>> heap;    //维护小根堆
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i ++) {
         int x;
         scanf("%d", &x);
         heap.push(x);

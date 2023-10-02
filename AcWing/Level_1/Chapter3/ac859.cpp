@@ -2,11 +2,11 @@
 #include <cstring>
 #include <algorithm>
 
-using namespace std;
+using namespace std;     //AcWing 859. Kruskal算法求最小生成树
 
-const int N = 100010, M = 2*N, INF = 0x3f3f3f3f;
+const int N = 100010, M = 2 * N, INF = 0x3f3f3f3f;
 
-struct Edge {       //AcWing 859. Kruskal算法求最小生成树
+struct Edge {       
     int a, b, w;
 
     bool operator< (const Edge &W) const {
@@ -28,7 +28,7 @@ int kruskal() {
     sort(edges, edges + m);   
 
     int res = 0, cnt = 0;   // res记录最小生成树权重，cnt记录当前最小生成树边数
-    for (int i = 0; i < m; i++) {
+    for (int i = 0; i < m; i ++) {
         int a = edges[i].a, b = edges[i].b, w = edges[i].w;
 
         if (find(a) != find(b)) {   
@@ -46,9 +46,9 @@ int main(void) {
     scanf("%d%d", &n, &m);
 
     //初始化并查集
-    for (int i = 1; i <= n; i++) p[i] = i;
+    for (int i = 1; i <= n; i ++) p[i] = i;
 
-    for (int i = 0; i < m; i++) {
+    for (int i = 0; i < m; i ++) {
         int a, b, c;
         scanf("%d%d%d", &a, &b, &c);
         edges[i] = {a, b, c};

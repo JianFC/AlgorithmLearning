@@ -2,20 +2,20 @@
 
 using namespace std;
 
-const int N = 1010;
+const int N = 1010;      //AcWing 796. 子矩阵的和
 
 int n, m, q;
 int a[N][N], s[N][N];
 
-int main(void) {    //AcWing 796. 子矩阵的和
+int main(void) {   
     scanf("%d%d%d", &n, &m, &q);
 
-    for (int i = 1; i <= n; i++)
-        for (int j = 1; j <= m; j++)
+    for (int i = 1; i <= n; i ++)
+        for (int j = 1; j <= m; j ++)
             scanf("%d", &a[i][j]);
 
-    for (int i = 1; i <= n; i++)
-        for (int j = 1; j <= m; j++)
+    for (int i = 1; i <= n; i ++)
+        for (int j = 1; j <= m; j ++)
             s[i][j] = s[i - 1][j] + s[i][j - 1] - s[i - 1][j - 1] + a[i][j];    //求前缀和
 
     while (q--) {

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 
-using namespace std;
+using namespace std;     //AcWing 844. 走迷宫
 
 typedef pair<int, int> PII;
 
@@ -12,7 +12,7 @@ int g[N][N], d[N][N];       //d[i][j]记录起点到点(i, j)的距离
 PII q[N * N], pre[N][N];    //pre记录路径，逆序
 int hh, tt = -1;
 
-int bfs() {     //AcWing 844. 走迷宫
+int bfs() {    
     memset(d, -1, sizeof d);
 
     d[0][0] = 0;
@@ -20,14 +20,14 @@ int bfs() {     //AcWing 844. 走迷宫
 
     int dx[4] = {-1, 0, 1, 0}, dy[4] = {0, 1, 0, -1};
     while (hh <= tt) {
-        auto t = q[hh++];
+        auto t = q[hh ++];
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i ++) {
             int x = t.first + dx[i], y = t.second + dy[i];
             if (x >= 0 && x < n && y >= 0 && y < m && !g[x][y] && d[x][y] == -1) {
                 d[x][y] = d[t.first][t.second] + 1;
                 pre[x][y] = t;
-                q[++tt] = {x, y};
+                q[++ tt] = {x, y};
             }
         }
     }
@@ -45,8 +45,8 @@ int bfs() {     //AcWing 844. 走迷宫
 int main(void) {
     scanf("%d%d", &n, &m);
 
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < m; j++)
+    for (int i = 0; i < n; i ++)
+        for (int j = 0; j < m; j ++)
             scanf("%d", &g[i][j]);
 
     cout << bfs();

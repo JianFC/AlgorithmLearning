@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <queue>
 
-using namespace std;
+using namespace std;        //AcWing 850. Dijkstra求最短路 II
 
 typedef pair<int, int> PII;
 
@@ -14,7 +14,7 @@ int h[N], e[M], w[M], ne[M], idx;
 int dist[N];
 bool st[N];
 
-void add(int a, int b, int c){      //AcWing 850. Dijkstra求最短路 II
+void add(int a, int b, int c){      
     e[idx] = b, w[idx] = c, ne[idx] = h[a], h[a] = idx++;
 }
 
@@ -53,7 +53,7 @@ int main(void) {
 
     memset(h, -1, sizeof h);
 
-    for (int i = 0; i < m; i++) {
+    for (int i = 0; i < m; i ++) {
         int a, b, c;
         scanf("%d%d%d", &a, &b, &c);
         add(a, b, c);

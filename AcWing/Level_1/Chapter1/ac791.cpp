@@ -1,9 +1,9 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
+using namespace std;    //AcWing 791. 高精度加法
 
-vector<int> add(vector<int> &A, vector<int> &B) {       //AcWing 791. 高精度加法
+vector<int> add(vector<int> &A, vector<int> &B) {       
     vector<int> C;      //存储答案
     
     int t = 0;  //t存储进位，初始为0
