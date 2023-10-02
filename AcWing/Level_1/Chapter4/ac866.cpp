@@ -1,8 +1,8 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;        //AcWing 866. 试除法判定质数
 
-bool is_prime(int x) {      //AcWing 866. 试除法判定质数
+bool is_prime(int x) {      
     if (x < 2) return false;
     else
         //不推荐写成i*i<=x, 当x接近int最大值时存在溢出风险
@@ -17,7 +17,7 @@ int main(void) {
     int n;
     scanf("%d", &n);
 
-    while (n--) {
+    while (n --) {
         int a;
         scanf("%d", &a);
 

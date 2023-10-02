@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 
-using namespace std;
+using namespace std;    //272. 最长公共上升子序列，暴力做法，可进一步优化
 
 const int N = 3030;
 
@@ -10,7 +10,7 @@ int a[N], b[N];     //a和b数组分别代表两个序列
 int f[N][N];    //f[i][j]代表的集合：所有由a序列前i个字符，b序列前j个字符，且以b[j]
                 //结尾的公共上升子序列长度的集合; 集合属性为求长度最大值
 
-int main(void) {    //272. 最长公共上升子序列，暴力做法，可进一步优化
+int main(void) {    
     scanf("%d", &n);
     for (int i = 1; i <= n; i ++) scanf("%d", &a[i]);
     for (int i = 1; i <= n; i ++) scanf("%d", &b[i]);

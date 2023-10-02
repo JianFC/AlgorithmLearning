@@ -33,7 +33,7 @@ int main(void) {
 
     init();
 
-    while (m--) {
+    while (m --) {
         int k, x;
         string op;
         cin >> op;

@@ -2,7 +2,7 @@
 #include <cstring>
 #include <algorithm>
 
-using namespace std;
+using namespace std;        //AcWing 91. 最短Hamilton路径
 
 const int N = 21, M = 1 << N;
 
@@ -10,7 +10,7 @@ int n;
 int w[N][N];
 int f[M][N];    //f[i][j]表示所有从0号点走到j号点，走过的所有点是状态i的路径最小值
 
-int main(void) {    //AcWing 91. 最短Hamilton路径
+int main(void) {    
     scanf("%d", &n);
 
     for (int i = 0; i < n; i ++)

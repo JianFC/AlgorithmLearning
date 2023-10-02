@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 
-using namespace std;
+using namespace std;    //1012. 友好城市
 
 typedef pair<int, int> PII;
 
@@ -11,16 +11,16 @@ int n;
 PII q[N];
 int f[N];
 
-int main() {    //1012. 友好城市
+int main() {    
     scanf("%d", &n);
-    for (int i = 0; i < n; i++) scanf("%d%d", &q[i].first, &q[i].second);
+    for (int i = 0; i < n; i ++) scanf("%d%d", &q[i].first, &q[i].second);
     
-    sort(q, q+n);   //按南岸城市坐标从小到大排序
+    sort(q, q + n);   //按南岸城市坐标从小到大排序
     
     int res = 0;
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i ++) {
         f[i] = 1;
-        for (int j = 0; j < i; j++)
+        for (int j = 0; j < i; j ++)
             if (q[i].second > q[j].second)
                 f[i] = max(f[i], f[j] + 1);
         

@@ -15,7 +15,7 @@ int get(vector<int> num, int l, int r) {
 //返回10^x
 int power10(int x) {
     int res = 1;
-    while (x--) res *= 10;
+    while (x --) res *= 10;
     return res;
 }
 

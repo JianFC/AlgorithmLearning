@@ -66,7 +66,7 @@ void insert(int &p, int key) {  //插入一个key，需要更改实参的值，�
 void remove(int &p, int key) {  //删除一个key，需要更改实参的值，故传引用，递归实现
     if (!p) return;     //删除的key不存在，直接return
     if (tr[p].key == key) {
-        if (tr[p].cnt > 1) tr[p].cnt--;     //当前结点个数>1, cnt--;
+        if (tr[p].cnt > 1) tr[p].cnt --;     //当前结点个数>1, cnt--;
         else if (tr[p].l || tr[p].r) {      //当前结点存在左子树或右子树
             if (!tr[p].r || tr[tr[p].l].val > tr[tr[p].r].val) {
                 //当前结点右子树不存在 || 左儿子val > 右儿子val -> 右旋
