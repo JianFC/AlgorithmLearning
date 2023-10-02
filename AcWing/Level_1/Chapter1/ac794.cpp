@@ -8,7 +8,7 @@ using namespace std;    //AcWing 794. 高精度除法
 vector<int> div(vector<int> &A, int &b, int &r) { 
     vector<int> C;  //C存储答案
 
-    for (int i = A.size() - 1; i >= 0; i--) {   //从最高位开始处理
+    for (int i = A.size() - 1; i >= 0; i --) {   //从最高位开始处理
         r = r * 10 + A[i];  //模拟余数计算过程
         C.push_back(r / b);
         r %= b;
@@ -25,10 +25,10 @@ int main(void) {
     vector<int> A, C; int r = 0;    //r表示余数，最开始为0
 
     cin >> a >> b;
-    for (int i = a.size() - 1; i >= 0; i--) A.push_back(a[i] - '0');
+    for (int i = a.size() - 1; i >= 0; i --) A.push_back(a[i] - '0');
 
     C = div(A, b, r);
-    for (int i = C.size() - 1; i >= 0; i--) printf("%d", C[i]);
+    for (int i = C.size() - 1; i >= 0; i --) printf("%d", C[i]);
     cout << endl << r;
 
     return 0;

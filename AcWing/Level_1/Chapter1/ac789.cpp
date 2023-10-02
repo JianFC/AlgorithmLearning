@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;    //AcWing 789. 数的范围
 
-const int N = 1e5+10;
+const int N = 1e5 + 10;
 
 int n, m;
 int q[N];
@@ -10,9 +10,9 @@ int q[N];
 int main(void) {
     scanf("%d%d", &n, &m);
 
-    for (int i = 0; i < n; i++) scanf("%d", &q[i]);
+    for (int i = 0; i < n; i ++) scanf("%d", &q[i]);
 
-    while (m--) {
+    while (m --) {
         int x; scanf("%d", &x);
 
         int l = 0, r = n - 1;

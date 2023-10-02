@@ -20,7 +20,7 @@ int main() {
         int v, w;
         cin >> v >> w;
         
-        for (int j = m; j >= v; j--) {  //优化维数后，从大到小循环
+        for (int j = m; j >= v; j --) {  //优化维数后，从大到小循环
             int maxv = max(f[j], f[j - v] + w);
             int cnt = 0;    //暂时记录方案数
             if (maxv == f[j]) cnt += g[j];  

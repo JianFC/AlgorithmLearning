@@ -23,7 +23,7 @@ int quick_sort(int *q, int l, int r, int k) {   //AcWing 786. 第k个数
 int main(void) {
     scanf("%d%d", &n, &k);
 
-    for (int i = 0; i < n; i++) scanf("%d", &q[i]);
+    for (int i = 0; i < n; i ++) scanf("%d", &q[i]);
 
     cout << quick_sort(q, 0, n - 1, k);
 

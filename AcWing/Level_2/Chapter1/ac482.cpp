@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 
-using namespace std;
+using namespace std;     //AcWing 482. 合唱队形
 
 const int N = 110;
 
@@ -9,7 +9,7 @@ int n;
 int a[N];
 int f[N], g[N];
 
-int main() {    //AcWing 482. 合唱队形
+int main() {   
     scanf("%d", &n);
     for (int i = 1; i <= n; i++) scanf("%d", &a[i]);
 

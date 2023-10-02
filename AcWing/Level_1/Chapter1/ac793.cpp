@@ -22,11 +22,11 @@ int main(void) {
     vector<int> A, C;
 
     cin >> a >> b;
-    for (int i = a.size() - 1; i >= 0; i--) A.push_back(a[i] - '0');
+    for (int i = a.size() - 1; i >= 0; i --) A.push_back(a[i] - '0');
 
     C = mul (A, b);
 
-    for (int i = C.size() - 1; i >= 0; i--) printf("%d", C[i]);
+    for (int i = C.size() - 1; i >= 0; i --) printf("%d", C[i]);
 
     return 0;
 }
