@@ -1,6 +1,6 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;        //AcWing 826. 单链表
 
 const int N = 100010;
 
@@ -11,7 +11,7 @@ const int N = 100010;
 int head, e[N], ne[N], idx;
 
 //初始化
-void init() {       //AcWing 826. 单链表
+void init() {       
     head = -1, idx = 0;
 }
 
@@ -36,7 +36,7 @@ int main(void) {
 
     init();
 
-    while (m--) {
+    while (m --) {
         int k, x;
         char op;
         // scanf("%c", &op);
@@ -53,7 +53,7 @@ int main(void) {
         }
         else {
             scanf("%d%d", &k, &x);
-            add(k-1, x);
+            add(k - 1, x);
         }
     }
 

@@ -1,6 +1,6 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;        //AcWing 836. 合并集合
 
 const int N = 100010;
 
@@ -8,7 +8,7 @@ int n, m;
 int p[N];   //p[N]存储每个节点的父节点是谁
 
 //返回x的祖宗结点 + 路径压缩
-int find(int x) {       //AcWing 836. 合并集合
+int find(int x) {       
     if (p[x] != x) p[x] = find(p[x]);
     return p[x];    //注意一定是返回p[x]
 }
@@ -16,9 +16,9 @@ int find(int x) {       //AcWing 836. 合并集合
 int main(void) {
     scanf("%d%d", &n, &m);
 
-    for (int i = 1; i <= n; i++) p[i] = i;
+    for (int i = 1; i <= n; i ++) p[i] = i;
 
-    while (m--) {
+    while (m --) {
         int a, b;
         char op[2];
         scanf("%s%d%d", op, &a, &b);

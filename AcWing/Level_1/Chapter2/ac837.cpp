@@ -1,13 +1,13 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;        //AcWing 837. 连通块中点的数量
 
 const int N = 100010;
 
 int n, m;
 int p[N], cnt[N];   //cnt[i] i所在集合中结点的个数，只保证集合数中根结点的cnt正确。
 
-int find(int x) {       //AcWing 837. 连通块中点的数量
+int find(int x) {       
     if (p[x] != x) p[x] = find(p[x]);
     return p[x];
 }
@@ -15,9 +15,9 @@ int find(int x) {       //AcWing 837. 连通块中点的数量
 int main(void) {
     scanf("%d%d", &n, &m);
 
-    for (int i = 1; i <= n; i++) p[i] = i, cnt[i] = 1;  //初始化p和cnt数组
+    for (int i = 1; i <= n; i ++) p[i] = i, cnt[i] = 1;  //初始化p和cnt数组
 
-    while (m--) {
+    while (m --) {
         int a, b;
         char op[3];
         scanf("%s", op);

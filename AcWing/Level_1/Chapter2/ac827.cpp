@@ -1,13 +1,13 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;         //AcWing 827. 双链表
 
 const int N = 100010;
 
 int head, l[N], r[N], e[N], idx;
 
 //初始化双链表
-void init() {       //AcWing 827. 双链表
+void init() {      
     //0表示最左端结点，1表示最右边结点，起标志作用，不能被删除或修改
     //idx从2开始
     r[0] = 1, l[1] = 0;
@@ -18,7 +18,7 @@ void init() {       //AcWing 827. 双链表
 void add(int k, int x) {
     e[idx] = x;
     l[idx] = k, r[idx] = r[k];
-    l[r[k]] = idx, r[k] = idx++;
+    l[r[k]] = idx, r[k] = idx ++;
 }
 
 //删除第k个插入的结点

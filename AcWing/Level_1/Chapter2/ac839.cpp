@@ -2,7 +2,7 @@
 #include <cstring>
 #include <algorithm>
 
-using namespace std;
+using namespace std;     //AcWing 839. 模拟堆
 
 const int N = 100010;
 
@@ -10,7 +10,7 @@ const int N = 100010;
 //hp[i]：下标是i的点是第几个插入的数
 int h[N], ph[N], hp[N], cnt;
 
-void heap_swap(int a, int b) {      //AcWing 839. 模拟堆
+void heap_swap(int a, int b) {      
     swap(ph[hp[a]], ph[hp[b]]);     //交换ph指针
     swap(hp[a], hp[b]);         //交换hp指针
     swap(h[a], h[b]);           //交换值
@@ -37,14 +37,14 @@ int main(void) {
     int n, m = 0;
     scanf("%d", &n);
 
-    while (n -- ) {
+    while (n --) {
         int k, x;
         char op[10];
         scanf("%s", op);
 
         if (!strcmp(op, "I")) {
             scanf("%d", &x);
-            cnt++, m++;
+            cnt ++, m ++;
             ph[m] = cnt, hp[cnt] = m;
             h[cnt] = x;
             up(cnt);
@@ -52,14 +52,14 @@ int main(void) {
         else if (!strcmp(op, "PM")) printf("%d\n", h[1]);
         else if (!strcmp(op, "DM")) {
             heap_swap(1, cnt);
-            cnt--;
+            cnt --;
             down(1);
         }
         else if (!strcmp(op, "D")) {
             scanf("%d", &k);
             k = ph[k];
             heap_swap(k, cnt);
-            cnt--;
+            cnt --;
             down(k), up(k);
         }
         else {
