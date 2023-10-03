@@ -2,13 +2,13 @@
 #include <unordered_map>
 #include <algorithm>
 
-using namespace std;
+using namespace std;      //AcWing 870. 约数个数
 
 typedef long long LL;
 
 const int mod = 1e9 + 7;
 
-int main(void) {    //AcWing 870. 约数个数
+int main(void) {    
     int n;
     scanf("%d", &n);
 
@@ -20,11 +20,11 @@ int main(void) {    //AcWing 870. 约数个数
         int x;
         scanf("%d", &x);
 
-        for (int i = 2; i <= x / i; i++) 
+        for (int i = 2; i <= x / i; i ++) 
             while (x % i == 0) 
-                x /= i, primes[i]++;
+                x /= i, primes[i] ++;
 
-        if (x > 1) primes[x]++;
+        if (x > 1) primes[x] ++;
     }
 
     LL res = 1;

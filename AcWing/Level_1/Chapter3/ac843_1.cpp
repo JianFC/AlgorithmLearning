@@ -1,6 +1,6 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;        //AcWing 843. n-皇后问题
 
 const int N = 20;
 
@@ -28,7 +28,7 @@ void dfs(int u) {
     }
 }
 
-int main(void) {    //AcWing 843. n-皇后问题
+int main(void) {    
     scanf("%d", &n);
 
     for (int i = 0; i < n; i ++)

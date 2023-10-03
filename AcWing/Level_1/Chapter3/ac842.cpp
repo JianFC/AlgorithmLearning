@@ -1,6 +1,6 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;    //AcWing 842. 排列数字
 
 const int N = 10;
 
@@ -26,7 +26,7 @@ void dfs(int u) {
 }
 
 
-int main(void) {    //AcWing 842. 排列数字
+int main(void) {    
     scanf("%d", &n);
 
     dfs(0);

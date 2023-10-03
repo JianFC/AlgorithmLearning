@@ -17,7 +17,7 @@ void add(int a, int b) {
 bool toposort() {
     //将所有入度为0的点入队
     for (int i = 1; i <= n; i ++)
-        if (!d[i]) q[++tt] = i;
+        if (!d[i]) q[++ tt] = i;
 
     while (hh <= tt) {
         int t = q[hh ++];

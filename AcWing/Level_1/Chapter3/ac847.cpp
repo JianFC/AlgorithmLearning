@@ -18,10 +18,10 @@ int bfs() {
     memset(d, -1, sizeof d);
 
     d[1] = 0;
-    q[++tt] = 1;
+    q[++ tt] = 1;
 
     while (hh <= tt) {
-        int t = q[hh++];
+        int t = q[hh ++];
 
         for (int i = h[t]; i != -1; i = ne[i]) {
             int j = e[i];

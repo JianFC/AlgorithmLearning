@@ -7,7 +7,7 @@ bool is_prime(int x) {
     else
         //不推荐写成i*i<=x, 当x接近int最大值时存在溢出风险
         //也不建议写成i <= sqrt(x)，sqrt函数运算较慢
-        for (int i = 2; i <= x / i; i++)    
+        for (int i = 2; i <= x / i; i ++)    
             if (x % i == 0) return false;
 
     return true;

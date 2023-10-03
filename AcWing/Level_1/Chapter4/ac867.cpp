@@ -1,12 +1,12 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;        //AcWing 867. 分解质因数
 
-void divide(int x) {        //AcWing 867. 分解质因数
-    for (int i = 2; i <= x / i; i++) {  
+void divide(int x) {        
+    for (int i = 2; i <= x / i; i ++) {  
         if (x % i == 0) {   //成立时 i一定是质数
             int s = 0;
-            while (x % i == 0) x /= i, s++;
+            while (x % i == 0) x /= i, s ++;
             printf("%d %d\n", i, s);
         }
     }
@@ -20,7 +20,7 @@ int main(void) {
     int n;
     scanf("%d", &n);
 
-    while (n--) {
+    while (n --) {
         int a;
         scanf("%d", &a);
         divide(a);
