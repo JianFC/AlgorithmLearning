@@ -1,14 +1,14 @@
 #include <iostream>
 #include <algorithm>
 
-using namespace std;
+using namespace std;         //AcWing 884. 高斯消元解异或线性方程组
 
 const int N = 110;
 
 int n;
 int a[N][N];
 
-int gauss() {   //AcWing 884. 高斯消元解异或线性方程组
+int gauss() {  
     int c, r;
 
     for (c = 0, r = 0; c < n; c ++) {
@@ -28,7 +28,7 @@ int gauss() {   //AcWing 884. 高斯消元解异或线性方程组
             if (a[i][c])  
                 for (int j = n; j >= c; j --)
                     a[i][j] ^= a[r][j];     
-        r++;
+        r ++;
     }
 
     if (r < n) {

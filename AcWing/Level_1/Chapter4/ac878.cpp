@@ -1,10 +1,10 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;        //AcWing 878. 线性同余方程
 
 typedef long long LL;
 
-int exgcd(int a, int b, int &x, int &y) {       //AcWing 878. 线性同余方程
+int exgcd(int a, int b, int &x, int &y) {       
     if (!b) {
         x = 1, y = 0;
         return a;
@@ -19,7 +19,7 @@ int main(void) {
     int n;
     scanf("%d", &n);
 
-    while (n--) {
+    while (n --) {
         int a, b, m;
         scanf("%d%d%d", &a, &b, &m);
 

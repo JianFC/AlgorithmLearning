@@ -1,13 +1,13 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;        //AcWing 889. 满足条件的01序列
 
 typedef long long LL;
 
 const int mod = 1e9 + 7;
 
 //快速幂
-LL qmi(int a, int k, int p) {   //AcWing 889. 满足条件的01序列
+LL qmi(int a, int k, int p) {   
     LL res = 1 % p;
 
     while (k) {
@@ -27,12 +27,12 @@ int main(void) {
     int res = 1;
 
     //计算C(2n, n)
-    for (int i = 1, j = a; i <= b; i++, j--) {
+    for (int i = 1, j = a; i <= b; i ++, j --) {
         res = (LL)res * j % mod;
         res = (LL)res * qmi(i, mod - 2, mod) % mod;
     }
 
-    //计算(1/(n+1))*C(2n, n) （卡特兰数）
+    //计算(1 / (n + 1)) * C(2n, n) （卡特兰数）
     res = (LL)res * qmi(n + 1, mod - 2, mod) % mod;
 
     cout << res;

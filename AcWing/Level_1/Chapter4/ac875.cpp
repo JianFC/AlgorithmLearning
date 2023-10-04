@@ -4,11 +4,11 @@ using namespace std;        //AcWing 875. 快速幂
 
 typedef long long LL;
 
-// 返回 a^k mod p
+// 返回 a ^ k mod p
 LL qmi(int a, int k, int p) {       
     LL res = 1 % p;
     while (k) {
-        //初始时a = a^(2^0) 
+        //初始时a = a ^ (2 ^ 0) 
         if (k & 1) res = res * a % p;
         k >>= 1;
         a = (LL)a * a % p;

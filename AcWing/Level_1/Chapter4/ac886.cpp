@@ -1,6 +1,6 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;     //AcWing 886. 求组合数 II
 
 typedef long long LL;
 
@@ -9,7 +9,7 @@ const int N = 100010, mod = 1e9 + 7;
 // fact[i]表示i! % mod, infact[i]表示(i!)^(-1) % mod
 LL fact[N], infact[N]; 
 
-LL qmi(int a, int k, int p) {       //AcWing 886. 求组合数 II
+LL qmi(int a, int k, int p) {      
     LL res = 1 % p;
 
     while (k) {
@@ -27,12 +27,12 @@ int main(void) {
 
     //预处理fact（阶乘）与infact（阶乘的逆）的数组
     fact[0] = infact[0] = 1;
-    for (int i = 1; i < N; i++) {
+    for (int i = 1; i < N; i ++) {
         fact[i] = (LL)fact[i - 1] * i % mod;
         infact[i] = (LL)infact[i - 1] * qmi(i, mod - 2, mod) % mod;
     }
 
-    while (n--) {
+    while (n --) {
         int a, b;
         scanf("%d%d", &a, &b);
         printf("%lld\n", fact[a] * infact[b] % mod * infact[a - b] % mod);    //组合数公式

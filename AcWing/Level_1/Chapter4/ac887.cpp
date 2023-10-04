@@ -1,11 +1,11 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;        //AcWing 887. 求组合数 III
 
 typedef long long LL;
 
 //快速幂用于求逆元
-LL qmi(int a, int k, int p) {       //AcWing 887. 求组合数 III
+LL qmi(int a, int k, int p) {       
     LL res = 1 % p;
 
     while (k) {
@@ -22,7 +22,7 @@ int C(int a, int b, int p) {
     if (b > a) return 0;
 
     int res = 1;
-    for (int i = 1, j = a; i <= b; i++, j--) {
+    for (int i = 1, j = a; i <= b; i ++, j --) {
         res = (LL)res * j % p;
         res = (LL)res * qmi(i, p - 2, p) % p;
     }
@@ -41,7 +41,7 @@ int main(void) {
     int n;
     scanf("%d", &n);
 
-    while (n--) {
+    while (n --) {
         LL a, b;
         int p;
         scanf("%lld%lld%d", &a, &b, &p);

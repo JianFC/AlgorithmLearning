@@ -1,10 +1,10 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;         //AcWing 204. 表达整数的奇怪方式
 
 typedef long long LL;
 
-LL exgcd(LL a, LL b, LL &x, LL &y) {    //AcWing 204. 表达整数的奇怪方式
+LL exgcd(LL a, LL b, LL &x, LL &y) {   
     if (!b) {
         x = 1, y = 0;
         return a;
@@ -26,7 +26,7 @@ int main(void) {
     scanf("%lld%lld", &a1, &m1);
 
     //依次合并之后n-1个式子
-    for (int i = 0; i < n - 1; i++) {
+    for (int i = 0; i < n - 1; i ++) {
         LL a2, m2;
         scanf("%lld%lld", &a2, &m2);
 
