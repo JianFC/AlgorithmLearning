@@ -13,7 +13,7 @@ int ans;    //记录全局最小值
 //u代表当前处理到了第u个点，su表示当前上升子序列的数量，sd表示当前下降子序列的数量
 void dfs(int u, int su, int sd) {
     if (su + sd >= ans) return;    //剪枝，ans不会被更新，注意等号
-    if (u == n) {       ////找到一种新方案，此处ans<=su+sd
+    if (u == n) {       ////找到一种新方案，此处ans <= su + sd
         ans = su + sd;
         return;
     }
