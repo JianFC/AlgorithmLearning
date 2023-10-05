@@ -1,8 +1,8 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;        //AcWing 796. 子矩阵的和
 
-const int N = 1010;      //AcWing 796. 子矩阵的和
+const int N = 1010;      
 
 int n, m, q;
 int a[N][N], s[N][N];

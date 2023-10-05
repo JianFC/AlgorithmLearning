@@ -14,7 +14,7 @@ int main(void) {
 
     int res = 0;
     for (int i = 0, j = 0; i < n; i ++) {    //i枚举终点，j枚举i往左最远能到的位置，j具有单调性，只能向后移动
-        s[a[i]]++;
+        s[a[i]] ++;
 
         while (j <= i && s[a[i]] > 1) {
             s[a[j]] --;

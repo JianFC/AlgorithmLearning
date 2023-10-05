@@ -1,5 +1,5 @@
-
 #include <iostream>
+
 using namespace std;    //AcWing 789. 数的范围
 
 const int N = 1e5 + 10;
