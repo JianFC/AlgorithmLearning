@@ -20,7 +20,7 @@ int f[N];   //01背包问题状态表示，体积定义为恰好是j，优化一
 int main() {
     int T;
     cin >> T;
-    for (int C = 1; C <= T; C++) {
+    for (int C = 1; C <= T; C ++) {
         cin >> n;
         int m = 0;  //存储时间最大值
         

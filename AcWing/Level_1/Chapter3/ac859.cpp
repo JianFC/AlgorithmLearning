@@ -33,7 +33,7 @@ int kruskal() {
 
         if (find(a) != find(b)) {   
             res += w;
-            cnt++;  
+            cnt ++;  
             p[find(a)] = find(b);   //将两个连通块合并   
         }
     }
