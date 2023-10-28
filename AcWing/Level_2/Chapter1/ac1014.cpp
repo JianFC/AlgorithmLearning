@@ -6,8 +6,8 @@ using namespace std;        //AcWing 1014. 登山
 const int N = 1010;
 
 int n;
-int a[N];
-int f[N], g[N];
+int a[N];       //存储原序列
+int f[N], g[N];     //f存储正向LIS答案，g存储方向LIS答案
 
 int main() {    
     scanf("%d", &n);
@@ -30,8 +30,8 @@ int main() {
                 g[i] = max(g[i], g[j] + 1);
     }
 
-    int res = 0;
-    for (int k = 1; k <= n; k ++) res = max(res, f[k] + g[k] - 1);
+    int res = 0;       //子序列长度为f[k] + g[k] - 1
+    for (int k = 1; k <= n; k ++) res = max(res, f[k] + g[k] - 1);  
 
     printf("%d\n", res);
 
