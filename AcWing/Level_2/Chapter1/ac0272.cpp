@@ -23,7 +23,7 @@ int main(void) {
             if (a[i] == b[j]) {     //包含a[i]的情况，此时必有a[i] == b[j];
                 f[i][j] = max(f[i][j], 1);  //LIS问题，倒数第二个字符为空，只有b[j]
                 for (int k = 1; k < j; k ++) {
-                    //满足条件时，求LIS问题的解，注意是f[i-1][k]+1
+                    //满足条件时，求LIS问题的解，注意是f[i - 1][k] + 1
                     if (b[k] < b[j]) f[i][j] = max(f[i][j], f[i - 1][k] + 1);
                 }
             }

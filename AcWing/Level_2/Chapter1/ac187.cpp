@@ -6,15 +6,15 @@ using namespace std;    //AcWing 187. 导弹防御系统
 const int N = 55;
 
 int n;
-int q[N];
-int up[N], down[N]; //up和down数组分别代表上升和下降子序列的g数组
+int q[N];       //q表示原序列
+int up[N], down[N]; //up和down数组分别代表上升和下降子序列的g数组，即各个上升和下降子序列的结尾
 int ans;    //记录全局最小值
 
 //u代表当前处理到了第u个点，su表示当前上升子序列的数量，sd表示当前下降子序列的数量
 void dfs(int u, int su, int sd) {
     if (su + sd >= ans) return;    //剪枝，ans不会被更新，注意等号
-    if (u == n) {       ////找到一种新方案，此处ans <= su + sd
-        ans = su + sd;
+    if (u == n) {       //找到一种新方案，此处ans <= su + sd
+        ans = su + sd;      //更新全局最小值
         return;
     }
 

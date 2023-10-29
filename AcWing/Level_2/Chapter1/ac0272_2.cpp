@@ -17,18 +17,18 @@ int main(void) {
     
     for (int i = 1; i <= n; i ++) {
         
-        int maxv = 1;
+        int maxv = 1;   //maxv表示[1, j - 1]中f[i - 1][k]的最大值
         for (int j = 1; j <= n; j ++) {
             f[i][j] = f[i - 1][j];
             
-            if (b[j] < a[i]) maxv = max(maxv, f[i - 1][j] + 1); //求出f[i - 1][k] + 1的最大值
-            if (a[i] == b[j]) f[i][j] = max(f[i][j], maxv); //a[i] == b[j]时更新f[i][j];
+            if (b[j] < a[i]) maxv = max(maxv, f[i - 1][j] + 1);     //求出f[i - 1][k] + 1的最大值
+            if (a[i] == b[j]) f[i][j] = max(f[i][j], maxv);     //a[i] == b[j]时更新f[i][j];
             
             // if (a[i] == b[j]) {
             //     f[i][j] = max(f[i][j], 1);
-            //     for (int k=1; k<j; k ++)
-            //         if (b[k] < b[j]) //将b[j]换为a[i]后可以发现该循环可以和上层循环
-                                        //一起完成，故提出maxv变量，减少一层循环
+            //     for (int k = 1; k < j; k ++)    //找到从[1, j - 1]中b[k]小于a[i]的f[i - 1][k]最大值，可以往上提
+            //         if (b[k] < a[i]) //将b[j]换为a[i]后可以发现该循环可以和上层循环
+            //                          //一起完成，故提出maxv变量，减少一层循环
             //              f[i][j] = max(f[i][j], f[i - 1][k] + 1);
             // }
         }
