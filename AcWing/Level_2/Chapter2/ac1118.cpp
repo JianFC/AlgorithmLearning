@@ -24,7 +24,7 @@ bool check(int group[], int gc, int i) {    //判断元素数量为gc的group数
     
 }
 
-void dfs(int g, int gc, int tc, int start) {    //组的数量，组内元素数量，总共划分了多少元素，可以用的最小下标
+void dfs(int g, int gc, int tc, int start) {    //组的数量，组内元素数量，总共处理了多少元素，可以用的最小下标
     if (g >= ans) return;   //剪枝，分组数量已经超过ans
     if (tc == n) {
         ans = g;   //更新ans
@@ -50,7 +50,7 @@ int main() {
     cin >> n;
     for (int i = 0; i < n; i ++) cin >> p[i];   //读入数据
     
-    dfs(1, 0, 0, 0);    //初始时一个组，组内元素数量，总共划分了0个元素，改组可以放的元素的最小下标是0
+    dfs(1, 0, 0, 0);    //初始时一个组，组内元素数量，总共处理了0个元素，改组可以放的元素的最小下标是0
     
     cout << ans << endl;
     
