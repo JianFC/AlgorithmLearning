@@ -17,12 +17,12 @@ void init() {
 
 //将x插到头结点
 void add_to_head(int x) {
-    e[idx] = x, ne[idx] = head, head = idx++;
+    e[idx] = x, ne[idx] = head, head = idx ++;
 }
 
 //将x插到第k个结点之后
 void add(int k, int x) {
-    e[idx] = x, ne[idx] = ne[k], ne[k] = idx++;
+    e[idx] = x, ne[idx] = ne[k], ne[k] = idx ++;
 }
 
 //将下标是k的点的后面的点删掉

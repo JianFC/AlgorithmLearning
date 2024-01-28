@@ -21,7 +21,7 @@ void pushup(int p) {    //利用p的左右儿子信息维护p的信息，信息�
 }
 
 int get_node(int key) {     //创建一个结点
-    tr[++idx].key = key;
+    tr[++ idx].key = key;
     tr[idx].val = rand();    //创建结点时，随机赋value值
     tr[idx].cnt = tr[idx].size = 1;     //创建结点时，为叶结点, cnt = size = 1
     return idx;     //返回创建节点的编号

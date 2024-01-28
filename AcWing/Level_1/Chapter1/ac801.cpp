@@ -17,7 +17,7 @@ int main(void) {
         scanf("%d", &x);
 
         int res = 0;
-        while (x) x -= lowbit(x), res++;    //每次减去x的最后一位1，res++
+        while (x) x -= lowbit(x), res ++;    //每次减去x的最后一位1，res++
 
         printf("%d ", res);
     }
