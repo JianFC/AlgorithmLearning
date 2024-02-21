@@ -31,7 +31,7 @@ int main(void) {
 
     for (int i = 0; i < n; i ++) scanf("%s", str[i] + 1);
 
-    while (m--) {
+    while (m --) {
         char s[N];
         int limit;
         scanf("%s%d", s + 1, &limit);

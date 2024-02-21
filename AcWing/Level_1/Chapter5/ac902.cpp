@@ -7,10 +7,10 @@ const int N = 1010;
 
 int n, m;
 char a[N], b[N];
-int f[N][N];    //f[i][j]表示将a[1~i]变成b[1~j]的操作方式中操作次数的最小值
+int f[N][N];    //f[i][j]表示将a[1 ~ i]变成b[1 ~ j]的操作方式中操作次数的最小值
 
 int main(void) {    
-    scanf("%d%s", &n, a + 1); //使用到了i-1
+    scanf("%d%s", &n, a + 1); //使用到了i - 1
     scanf("%d%s", &m, b + 1);
 
     //根据实际意义初始化边界情况

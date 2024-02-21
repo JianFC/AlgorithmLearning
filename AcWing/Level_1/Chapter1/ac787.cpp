@@ -10,8 +10,7 @@ inline void merge_sort(int *q, int l, int r) {
     if (l >= r) return;
 
     int mid = (l + r) >> 1;
-    merge_sort(q, l, mid);
-    merge_sort(q, mid + 1, r);
+    merge_sort(q, l, mid), merge_sort(q, mid + 1, r);
 
     int k = 1, i = l, j = mid + 1;
     while(i <= mid && j <= r) {

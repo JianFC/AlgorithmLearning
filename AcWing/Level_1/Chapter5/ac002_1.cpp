@@ -14,9 +14,9 @@ int main(void) {        //AcWing 2. 01背包问题朴素版
     //根据题意，从1开始输入
     for (int i = 1; i <= n; i++) scanf("%d%d", &v[i], &w[i]);
 
-    //根据实际意义f[0][0~m] = 0，全局变量默认为0，所以从1开始
-    for (int i = 1; i <= n; i++)
-        for (int j = 0; j <= m; j++) {
+    //根据实际意义f[0][0 ~ m] = 0，全局变量默认为0，所以从1开始
+    for (int i = 1; i <= n; i ++)
+        for (int j = 0; j <= m; j ++) {
             f[i][j] = f[i - 1][j];
             if (j >= v[i]) f[i][j] = max(f[i][j], f[i - 1][j - v[i]] + w[i]);
         }

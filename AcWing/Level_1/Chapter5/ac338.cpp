@@ -5,7 +5,7 @@
 
 using namespace std;        //AcWing 338. 计数问题
 
-//返回n中从l(高位)~r(低位)构成的数 
+//返回n中从l(高位) ~ r(低位)构成的数 
 int get(vector<int> num, int l, int r) {        
     int res = 0;    // res 从0开始
     for (int i = l; i >= r; i--) res = res * 10 + num[i];
@@ -19,7 +19,7 @@ int power10(int x) {
     return res;
 }
 
-//返回1~n中，x出现的次数
+//返回1 ~ n中，x出现的次数
 int count(int n, int x) {
     if (!n) return 0;   //当n=0，返回0
 

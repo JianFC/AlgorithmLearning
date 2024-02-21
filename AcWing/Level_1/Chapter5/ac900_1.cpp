@@ -19,7 +19,7 @@ int main(void) {
     //类似完全背包求解
     for (int i = 1; i <= n; i ++)
         for (int j = i; j <= n; j ++)    //注意循环起点位置
-            f[j] = (f[j] + f[j - i]) % mod;     //f[i][j] = f[i-1][j]+f[i][j-i];
+            f[j] = (f[j] + f[j - i]) % mod;     //f[i][j] = f[i - 1][j] + f[i][j - i];
 
     cout << f[n] << endl;
 

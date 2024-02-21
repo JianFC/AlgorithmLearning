@@ -26,7 +26,7 @@ int main(void) {    //AcWing 282. 石子合并
             //若区间长度为0，则合并代价为0，因此可以直接从len=2开始枚举
             //if (len == 1) f[l][r] = 0;
 
-            for (int k = l; k < r; k ++) //枚举分界线的位置l~(r-1)
+            for (int k = l; k < r; k ++) //枚举分界线的位置l ~ (r - 1)
                 f[l][r] = min(f[l][r], f[l][k] + f[k + 1][r] + s[r] - s[l - 1]);  //递推方程
         }
 
