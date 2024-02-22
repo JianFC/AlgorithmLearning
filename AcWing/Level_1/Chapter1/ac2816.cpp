@@ -15,7 +15,7 @@ int main(void) {
 
     int i = 0, j = 0;
     while (i < n && j < m) {
-        if (a[i] == b[j]) i++;
+        if (a[i] == b[j]) i ++;
         j ++;
     }
 

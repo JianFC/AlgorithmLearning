@@ -19,7 +19,7 @@ int main(void) {
             scanf("%d", &x);
             q[++ tt] = x;
         }
-        else if (op == "pop") hh++;
+        else if (op == "pop") hh ++;
         else if (op == "empty") {
             if (hh <= tt) puts("NO");
             else puts("YES");

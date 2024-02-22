@@ -16,7 +16,7 @@ int bfs() {
     memset(d, -1, sizeof d);
 
     d[0][0] = 0;
-    q[++tt] = {0, 0};
+    q[++ tt] = {0, 0};
 
     int dx[4] = {-1, 0, 1, 0}, dy[4] = {0, 1, 0, -1};
     while (hh <= tt) {
@@ -32,7 +32,7 @@ int bfs() {
         }
     }
 
-    // int x = n-1, y = m-1;
+    // int x = n - 1, y = m - 1;
     // while (x || y) {
     //     cout << x << " " << y << endl;
     //     auto t = pre[x][y];

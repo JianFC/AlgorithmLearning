@@ -35,7 +35,7 @@ int main(void) {
     //O(n)时间完成建堆
     for (int i = n / 2; i; i --) down(i);
 
-    while (m--) {
+    while (m --) {
         printf("%d ", h[1]);
         h[1] = h[cnt], cnt --;
         down(1);

@@ -28,7 +28,7 @@ vector<int>::iterator unique(vector<int> &a) {  //unique函数
 int find(int x) {   //找到第一个大于等于x的位置
     int l = 0, r = all.size() - 1;
     while (l < r) {
-        int mid = l + r >>1;
+        int mid = l + r >> 1;
         if (all[mid] >= x) r = mid;
         else l = mid + 1;
     }
