@@ -1,6 +1,6 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;            //AcWing 5. 多重背包问题 II优化
 
 // N ~ 1000 * log(2000) = 11000
 const int N = 15000, M = 2010;
@@ -9,7 +9,7 @@ int n, m;
 int v[N], w[N], cnt;    //cnt代表将每种物品分组后，转换为01背包问题里物品的总个数
 int f[M];   //降维后01背包问题
 
-int main(void) {    //AcWing 5. 多重背包问题 II优化
+int main(void) {    
     scanf("%d%d", &n, &m);
 
     //通过二进制优化将多重背包转换为01背包问题

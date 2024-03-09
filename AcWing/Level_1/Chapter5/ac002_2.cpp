@@ -1,6 +1,6 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;        //AcWing 2. 01背包问题降维优化
 
 const int N = 1010;
 
@@ -8,7 +8,7 @@ int n, m;
 int v[N], w[N];     //v[i]表示第i件物品的体积，w[i]表示第i物品的价值
 int f[N];    
 
-int main(void) {    //AcWing 2. 01背包问题降维优化
+int main(void) {    
     scanf("%d%d", &n, &m);
 
     //根据题意，从1开始输入

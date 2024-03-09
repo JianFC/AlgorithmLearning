@@ -16,7 +16,7 @@ int main(void) {
     unordered_map<int, int> primes;
 
     //质因数分解
-    while (n--) {
+    while (n --) {
         int x;
         scanf("%d", &x);
 

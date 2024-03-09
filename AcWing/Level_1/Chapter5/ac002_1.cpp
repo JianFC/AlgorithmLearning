@@ -1,6 +1,6 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;        //AcWing 2. 01背包问题朴素版
 
 const int N = 1010;
 
@@ -8,7 +8,7 @@ int n, m;
 int v[N], w[N];     //v[i]表示第i件物品的体积，w[i]表示第i物品的价值
 int f[N][N];    //f[i][j]表示分析中满足i,j限制条件集合的最大值属性
 
-int main(void) {        //AcWing 2. 01背包问题朴素版
+int main(void) {        
     scanf("%d%d", &n, &m);
 
     //根据题意，从1开始输入

@@ -9,7 +9,7 @@ int n;
 struct Range {
     int l, r;
 
-    bool operator< (const Range &W) const {
+    bool operator < (const Range &W) const {
         return r < W.r;
     }
 } range[N];

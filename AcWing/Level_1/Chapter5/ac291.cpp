@@ -18,7 +18,7 @@ int main(void) {
         memset(f, 0, sizeof f);     //对每组数据清空f
 
         //预处理每个行状态是否具有连续偶数个0
-        for (int i = 0; i< 1 << n; i ++) {
+        for (int i = 0; i < 1 << n; i ++) {
             st[i] = true;   //初始化为true
             int cnt = 0;    //存储连续偶数个0的个数
             for (int j = 0; j < n; j ++)     //对每一个状态枚举每一行

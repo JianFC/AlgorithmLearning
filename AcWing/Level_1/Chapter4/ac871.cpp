@@ -31,7 +31,7 @@ int main(void) {
 
         //快速计算p^1 + p^2 + ... + p^ak
         int t = 1;
-        while (a--)  t = (t * p + 1) % mod;
+        while (a --)  t = (t * p + 1) % mod;
 
         res = res * t % mod;
     }

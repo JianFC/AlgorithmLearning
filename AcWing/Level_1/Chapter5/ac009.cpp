@@ -1,6 +1,6 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;            //AcWing 9. 分组背包问题
 
 const int N = 110;
 
@@ -8,7 +8,7 @@ int n, m;
 int v[N][N], w[N][N], s[N];
 int f[N];
 
-int main(void) {    //AcWing 9. 分组背包问题
+int main(void) {    
     scanf("%d%d", &n, &m);
 
     for (int i = 1; i <= n; i ++) {

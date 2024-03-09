@@ -48,9 +48,9 @@ int gauss() {
 
     //若有解则从最后一行的方程开始求解
     for (int i = n - 1; i >= 0; i --)  //从最后一行开始
-        for (int j= i + 1; j < n; j ++)   
+        for (int j = i + 1; j < n; j ++)   
             //最终结果为a[i][n]-主元外的所有系数a[i][j]*与系数对应的xj的值即a[j][n]
-            a[i][n] -= a[i][j]*a[j][n];
+            a[i][n] -= a[i][j] * a[j][n];
 
     return 0;   //唯一解
 }

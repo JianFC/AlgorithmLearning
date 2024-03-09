@@ -1,6 +1,6 @@
 #include <iostream>
 
-using namespace std;
+using namespace std;        //AcWing 3. 完全背包问题优化时间复杂度和空间复杂度
 
 const int N = 1010;
 
@@ -8,7 +8,7 @@ int n, m;
 int v[N], w[N];
 int f[N];
 
-int main(void) {    //AcWing 3. 完全背包问题优化时间复杂度和空间复杂度
+int main(void) {    
     scanf("%d%d", &n, &m);
 
     for (int i = 1; i <= n; i ++) scanf("%d%d", &v[i], &w[i]);

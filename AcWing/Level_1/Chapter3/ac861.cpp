@@ -45,7 +45,7 @@ int main(void) {
     int res = 0;
     for (int i = 1; i <= n1; i ++) {     //从前往后考虑每个男生
         memset(st, false, sizeof st);   //对于该男生，所有妹子都没有考虑过，清空状态
-        if (find(i)) res++;
+        if (find(i)) res ++;
     }
 
     cout << res;

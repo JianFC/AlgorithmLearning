@@ -9,7 +9,7 @@ const int N = 100010, M = 2 * N, INF = 0x3f3f3f3f;
 struct Edge {       
     int a, b, w;
 
-    bool operator< (const Edge &W) const {
+    bool operator < (const Edge &W) const {
         return w < W.w;
     }
 } edges[M];

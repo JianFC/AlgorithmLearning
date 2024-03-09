@@ -39,7 +39,7 @@ int main(void) {
         int res = 0;    //记录有多少个字符串满足限制条件
         for (int i = 0; i < n; i ++)
             if (edit_dist(str[i], s) <= limit)
-                res++;
+                res ++;
 
         printf("%d\n", res);
     }
